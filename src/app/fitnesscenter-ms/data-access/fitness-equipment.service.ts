@@ -25,9 +25,20 @@ export class FitnessEquipmentService {
     const url =  "http://localhost:3000/fitnessEquipment";
 
     const headers = new HttpHeaders().set('Accept', 'application/json');
- 
+  
+    delete fitnessEquipment.id;
 
     return this.http.post<FitnessEquipment>(url,fitnessEquipment,{ headers })
+  }
+
+  editEquipment(fitnessEquipment:FitnessEquipment) : Observable<FitnessEquipment>{
+
+    const url =  "http://localhost:3000/fitnessEquipment/" + fitnessEquipment.id!.toString();
+
+    const headers = new HttpHeaders().set('Accept', 'application/json');
+ 
+
+    return this.http.put<FitnessEquipment>(url,fitnessEquipment,{ headers })
   }
 
 }

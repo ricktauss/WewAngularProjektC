@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FitnessEquipmentSearchComponent } from './feature/fitness-equipment-search/fitness-equipment-search.component';
 import { Routes } from '@angular/router';
-import { FitnessEquipmentEditComponent } from './feature/fitness-equipment-edit/fitness-equipment-edit.component';
+import { FitnessEquipmentAddComponent } from './feature/fitness-equipment-add/fitness-equipment-add.component';
 
 
 export const FITNESSCENTER_MS_ROUTES: Routes = [
@@ -11,7 +11,7 @@ export const FITNESSCENTER_MS_ROUTES: Routes = [
     component: FitnessEquipmentSearchComponent
   },
   {
-    path:'fitnessequipment-edit',
-    component:FitnessEquipmentEditComponent
+    path:'fitnessequipment-add',
+    component:FitnessEquipmentAddComponent
   }
 ];

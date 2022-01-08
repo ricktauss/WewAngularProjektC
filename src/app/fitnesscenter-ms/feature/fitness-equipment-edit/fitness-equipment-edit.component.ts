@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FitnessEquipmentService } from '../../data-access/fitness-equipment.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FitnessEquipment } from '../../entities/fitnessEquipment';
 
 @Component({
@@ -9,36 +8,35 @@ import { FitnessEquipment } from '../../entities/fitnessEquipment';
 })
 export class FitnessEquipmentEditComponent implements OnInit {
 
-  id:number=0;
-  equipmentName: string = "Laufband";
-  dateBought: string = '19.12.2021';
-  price:number = 0;
+//@Input() item: FitnessEquipment|undefined;
+@Input() item:FitnessEquipment|undefined;
+@Input() selected: boolean = false;
+//@Output() selectedChange = new EventEmitter<boolean>();
+@Output() fitnessEquipment = new EventEmitter<FitnessEquipment>();
+ equipment?: FitnessEquipment; //temporary equipment object
 
-  
+  constructor() { 
 
-  constructor(private fitnessEquipmentService: FitnessEquipmentService) {
-    console.log("Fitness Equipment Component was created!")
-   }
-
-
-   save():void{
-    
-    const fitnessEquipment:FitnessEquipment = {
-      id:this.id,
-      dateBought:this.dateBought,
-      equipmentName:this.equipmentName,
-      price:this.price
-    }
-      console.log("i was here!!!1")
-     this.fitnessEquipmentService.addEquipment(fitnessEquipment).subscribe({
-
-      error:(errResp) => {
-        console.log("Error Loading Fitness Equipment Devices",errResp);
-      }
-    })
-   }
+  }
 
   ngOnInit(): void {
+
+  this.equipment= Object.assign({}, this.item);
+  console.log(this.equipment.equipmentName + "test1234");
+    
+  //this.fitnessEquipment.emit(this.item);
+
   }
+
+  updateEquipment(): void {
+    console.log("update Equipment!")
+    this.fitnessEquipment.emit(this.equipment);
+  }
+
+  ngOnChanges(){
+    this.equipment= Object.assign({}, this.item);
+  }
+
+
 
 }

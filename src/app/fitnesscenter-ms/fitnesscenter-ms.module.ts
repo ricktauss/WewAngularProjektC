@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { FitnessEquipmentSearchComponent } from './feature/fitness-equipment-search/fitness-equipment-search.component';
-import { FitnessEquipmentEditComponent } from './feature/fitness-equipment-edit/fitness-equipment-edit.component';
 import { RouterModule } from '@angular/router';
 import { FITNESSCENTER_MS_ROUTES } from './fitnesscenter-routes.module';
+import { FitnessEquipmentAddComponent } from './feature/fitness-equipment-add/fitness-equipment-add.component';
+import { FitnessEquipmentEditComponent } from './feature/fitness-equipment-edit/fitness-equipment-edit.component';
 
 
 
 @NgModule({
   declarations: [
     FitnessEquipmentSearchComponent,
+    FitnessEquipmentAddComponent,
     FitnessEquipmentEditComponent
 
   ],

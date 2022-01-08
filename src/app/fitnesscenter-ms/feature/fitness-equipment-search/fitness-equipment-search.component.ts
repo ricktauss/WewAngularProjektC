@@ -1,9 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
+
 import { FitnessEquipmentService } from '../../data-access/fitness-equipment.service';
 import { FitnessEquipment } from '../../entities/fitnessEquipment';
-
-
-
 
 
 @Component({
@@ -19,6 +17,7 @@ export class FitnessEquipmentSearchComponent{
   equipmentName: string = "Laufband";
   equipments: Array<FitnessEquipment> = [];
   selectedEquipment?:FitnessEquipment;
+ 
   
 
   constructor(private fitnessEquipmentService: FitnessEquipmentService) {
@@ -30,6 +29,7 @@ export class FitnessEquipmentSearchComponent{
     }
 
     search():void{
+    
       this.fitnessEquipmentService.search(this.equipmentName).subscribe({
         next:(equipments:FitnessEquipment[])=> {
           this.equipments = equipments;
@@ -44,4 +44,25 @@ export class FitnessEquipmentSearchComponent{
   ngOnInit(): void {
   }
 
+  
+  updateSelection(fitnessEquipment:FitnessEquipment){
+
+    
+    this.fitnessEquipmentService.editEquipment(fitnessEquipment).subscribe({
+
+      error:(errResp) => {
+        console.log("Error Loading Fitness Equipment Devices",errResp);
+      }
+    })
+
+    this.equipments=[];
+    this.selectedEquipment = undefined;
+
+
+  }
+
+
+
 }
+
+

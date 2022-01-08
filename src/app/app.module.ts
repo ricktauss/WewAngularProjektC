@@ -9,6 +9,7 @@ import { FitnesscenterMsModule } from './fitnesscenter-ms/fitnesscenter-ms.modul
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app-routing.module';
+import { FitnessEquipmentEditComponent } from './fitnesscenter-ms/feature/fitness-equipment-edit/fitness-equipment-edit.component';
 
 
 @NgModule({
