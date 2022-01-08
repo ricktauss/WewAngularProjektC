@@ -1,0 +1,114 @@
+<div><a routerLink="/contract-creation">
+    <button class="btn btn-default">-&gt; Create New Contract</button>
+    <br><br>
+  </a></div>
+
+<div class="card">
+  <div class="header">
+    <h2 class="title">Contract Search</h2>
+  </div>
+
+  <div class="content">
+    <form>
+      <div class="form-group">
+        <label>First name:</label>
+        <input [(ngModel)]="firstName" name="firstName" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Last name:</label>
+        <input [(ngModel)]="lastName" name="lastName" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-default" [disabled]="!firstName && !lastName" (click)="search()">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="card">
+  <table class="table table-condensed" *ngIf="contracts.length > 0">
+    <thead>
+      <tr>
+        <th>Contract No.</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Membership Start</th>
+        <th>Membership Duration</th>
+        <th>Membership Fee</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of contracts" [class.active]="c === selectedContract">
+        <td>{{ c.contractId }}</td>
+        <td>{{ c.firstName }}</td>
+        <td>{{ c.lastName }}</td>
+        <td>{{ c.startTime | date: "dd.MM.yyyy" }}</td>
+        <td>{{ c.membershipDuration }}</td>
+        <td>{{ c.membershipFee | currencyFormatter:'EUR' : 1 }}</td>
+        <td>
+          <a (click)="select(c)">Select</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="card" *ngIf="selectedContract">
+  <div class="content">
+    <pre>{{ selectedContract | json }}</pre>
+  </div>
+</div>
+
+
+<div class="card" *ngIf="selectedContract">
+  <div class="header">
+    <h2 class="title">Contract Edit</h2>
+  </div>
+  <div class="content">
+
+    <form>
+      <div class="form-group">
+        <label>Contract No.</label>
+        <input [ngModel]="selectedContract.contractId" name="contractID" class="form-control" readonly="true">
+      </div>
+
+      <div class="form-group">
+        <label>First name</label>
+        <input [(ngModel)]="selectedContract.firstName" name="firstName" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Last name</label>
+        <input [(ngModel)]="selectedContract.lastName" name="lastName" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Membership Start</label>
+        <input [(ngModel)]="selectedContract.startTime" name="startTime" class="form-control" type="date">
+      </div>
+
+      <div class="form-group">
+        <label>Membership Duration</label>
+        <input [(ngModel)]="selectedContract.membershipDuration" name="membershipDuration" class="form-control"
+          type="datetime">
+      </div>
+
+      <div class="form-group">
+        <label>Membership Fee</label>
+        <input [(ngModel)]="selectedContract.membershipFee" name="membershipFee" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <button (click)="update()" class="btn btn-default">Change contract</button>
+        <span>
+          {{ message }}
+        </span>
+      </div>
+    </form>
+
+  </div>
+</div>

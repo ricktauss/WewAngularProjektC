@@ -1,0 +1,71 @@
+<div><a routerLink="/contract-search">
+    <button class="btn btn-default">
+      &lt;- Contract search</button>
+    <br><br>
+  </a></div>
+
+<div class="card">
+  <div class="header">
+    <h2 class="title">Create new contract</h2>
+  </div>
+  <div class="content">
+
+    <form #f="ngForm">
+      <div class="form-group">
+        <label>Contract No.</label>
+        <input [(ngModel)]="contract!.contractId" name="contractID" class="form-control" required pattern="[0-9]*">
+        <number-input-validation-error [errors]="f.controls['contractID'].errors" [inputValue]="contract!.contractId">
+        </number-input-validation-error>
+      </div>
+
+      <div class="form-group">
+        <label>First name</label>
+        <input [(ngModel)]="contract!.firstName" required minlength="3" name="firstName" class="form-control" pattern="[a-zA-Z ]*">
+      </div>
+
+
+      <!-- Weiter mit herumprobieren Validatoren-->
+      <div *ngIf="f.controls['firstName'].invalid && f.controls['firstName'].dirty && f.controls['firstName'].touched" [ngStyle]="{'color':'red'}">
+        Darf nur Buchstabe sein und muss mindesten xxx haben
+        </div>
+        <div *ngIf="f.controls['firstName'].hasError('required')">
+        Input erforderlich
+      </div>
+
+
+
+
+      <div class="form-group">
+        <label>Last name</label>
+        <input [(ngModel)]="contract!.lastName" required minlength="3" name="lastName" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Membership Start</label>
+        <input [(ngModel)]="contract!.startTime" name="startTime" class="form-control" type="date">
+      </div>
+
+      <div class="form-group">
+        <label>Membership Duration</label>
+        <input [(ngModel)]="contract!.membershipDuration" name="membershipDuration" class="form-control" required pattern="[0-9]*">
+        <number-input-validation-error [errors]="f.controls['membershipDuration'].errors" [inputValue]="contract!.membershipDuration">
+        </number-input-validation-error>
+      </div>
+
+      <div class="form-group">
+        <label>Membership Fee</label>
+        <input [(ngModel)]="contract!.membershipFee" name="membershipFee" class="form-control" required pattern="[0-9]*">
+        <number-input-validation-error [errors]="f.controls['membershipFee'].errors" [inputValue]="contract!.membershipFee">
+        </number-input-validation-error>
+      </div>
+
+      <div class="form-group">
+        <button (click)="create()" class="btn btn-default">Create contract</button>
+        <span>
+          {{ message }}
+        </span>
+      </div>
+    </form>
+
+  </div>
+</div>
