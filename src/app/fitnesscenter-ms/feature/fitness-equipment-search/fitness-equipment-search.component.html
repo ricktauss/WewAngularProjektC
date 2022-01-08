@@ -1,1 +1,63 @@
-<p>fitness-equipment-search works!</p>
+<div class="card">
+  <div class="header">
+    <h2>Fitness Equipment Managment</h2>
+  </div>
+
+  <div class="content">
+    <form #searchForm="ngForm">
+      <div class="form-group">
+        <label>EquipmentName:</label>
+        <input
+          [(ngModel)]="equipmentName"
+          name="equipmentName"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <button
+          [disabled]="!searchForm?.valid"
+          (click)="search()"
+          class="btn btn-default"
+        >
+          Search
+        </button>
+
+        <button routerLink="../fitnessequipment-edit" class="btn btn-default">
+          Add
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="card">
+  <table class="table table-condensed" *ngIf="equipments.length > 0">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Date Bought</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of equipments" [class.active]="e === selectedEquipment">
+        <td>{{ e.id }}</td>
+        <td>{{ e.equipmentName }}</td>
+        <td>{{ e.dateBought }}</td>
+        <td>{{ e.price }}</td>
+        <td>
+          <a (click)="select(e)">Select</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card" *ngIf="selectedEquipment">
+  <div class="content">
+    <pre>{{ selectedEquipment | json }}</pre>
+  </div>
+</div>

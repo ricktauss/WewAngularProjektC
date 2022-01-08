@@ -1,11 +1,13 @@
 export interface FitnessEquipment {
-    fitnessEquipmentId: number; 
+    id: number; 
+    equipmentName: string;
     dateBought: string;
     price: number;
   }
   
   export const initialFitnessEquipment: FitnessEquipment = {
-    fitnessEquipmentId: 0,
+    id: 0,
+    equipmentName:"",
     dateBought: '',
     price: 0
 
