@@ -1,17 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EquipmentNameDirective } from './validation/equipment-name.directive';
+
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    EquipmentNameDirective,
+   
+  ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
-    FormsModule
+    FormsModule,
+    EquipmentNameDirective,
+    
   ]
 })
 export class SharedModule { }

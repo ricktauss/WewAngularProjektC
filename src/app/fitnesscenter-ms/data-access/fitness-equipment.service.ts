@@ -10,12 +10,12 @@ export class FitnessEquipmentService {
 
   constructor(private http: HttpClient)  { }
 
-  search(equipmentName:string) : Observable<FitnessEquipment[]>{
+  search(equipmentName:string, equipmentCategory:string) : Observable<FitnessEquipment[]>{
     const url =  "http://localhost:3000/fitnessEquipment";
 
     const headers = new HttpHeaders().set('Accept', 'application/json');
 
-    const params = new HttpParams().set('equipmentName', equipmentName);
+    const params = new HttpParams().set('equipmentName_like', equipmentName).set('equipmentCategory_like', equipmentCategory);
 
     return this.http.get<FitnessEquipment[]>(url, { headers, params });
   }
@@ -39,6 +39,17 @@ export class FitnessEquipmentService {
  
 
     return this.http.put<FitnessEquipment>(url,fitnessEquipment,{ headers })
+  }
+
+  
+  deleteEquipment(equipmentID:number) : Observable<FitnessEquipment>{
+
+    const url =  "http://localhost:3000/fitnessEquipment/" + equipmentID.toString();
+
+    const headers = new HttpHeaders().set('Accept', 'application/json');
+ 
+
+    return this.http.delete<FitnessEquipment>(url,{ headers })
   }
 
 }

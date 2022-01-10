@@ -1,45 +1,104 @@
 <div class="card">
   <div class="header">
-    <h2 class="title">Fitness Equipment Editor</h2>
+    <h2 class="title">Add Fitness Equipment</h2>
   </div>
 
   <div class="content">
-    <form #editForm="ngForm">
+    <form #addForm="ngForm">
       <div class="form-group">
-        <label>equipmentID</label>
+        <label>Equipment ID:</label>
         <input
-          [(ngModel)]="equipmentId"
+          [(ngModel)]="addfitnessEquipment!.equipmentId"
           name="equipmentID"
           class="form-control"
+          required="true"
+          type="number"
         />
       </div>
 
+      <div
+        class="alert alert-danger"
+        *ngIf="addForm?.controls?.['equipmentID']?.hasError('required')"
+      >
+        Equipment ID is mandatory!
+      </div>
+
+      <div
+        class="alert alert-danger"
+        *ngIf="addForm?.controls?.['equipmentID']?.hasError('type')"
+      >
+        Regarding the Equipment ID only numbers are allowed!
+      </div>
+
       <div class="form-group">
-        <label>equipmentName:</label>
+        <label>equipment Name:</label>
         <input
-          [(ngModel)]="equipmentName"
+          [(ngModel)]="addfitnessEquipment!.equipmentName"
           name="equipmentName"
           class="form-control"
         />
       </div>
 
       <div class="form-group">
+        <label>equipment Category:</label>
+        <input
+          [(ngModel)]="addfitnessEquipment!.equipmentCategory"
+          name="equipmentCategory"
+          class="form-control"
+          required="true"
+          EquipmentName
+        />
+      </div>
+
+      <div
+        class="alert alert-danger"
+        *ngIf="addForm?.controls?.['equipmentCategory']?.hasError('required')"
+      >
+        Equipment Category is mandatory!
+      </div>
+
+      <div
+        class="alert alert-danger"
+        *ngIf="addForm?.controls?.['equipmentCategory']?.hasError('categories')"
+      >
+        These categories are allowed:
+        {{ addForm?.controls?.['equipmentCategory']?.errors?.categories.validCategories}}
+      </div>
+
+      <div class="form-group">
         <label>dateBought:</label>
         <input
-          [(ngModel)]="dateBought"
+          [ngModel]="addfitnessEquipment!.dateBought | date: 'yyyy-MM-dd'"
+          (ngModelChange)="addfitnessEquipment!.dateBought = $event"
           name="dateBought"
           class="form-control"
+          type="date"
         />
       </div>
 
       <div class="form-group">
         <label>price:</label>
-        <input [(ngModel)]="price" name="price" class="form-control" />
+        <input
+          [ngModel]="addfitnessEquipment!.price | currency: 'EUR'"
+          [ngModelOptions]="{ updateOn: 'blur' }"
+          (ngModelChange)="addfitnessEquipment!.price = $event"
+          name="price"
+          class="form-control"
+          type="text"
+          (keypress)="numberOnly($event)"
+        />
+      </div>
+
+      <div
+        class="alert alert-danger"
+        *ngIf="addForm?.controls?.['price']?.hasError('textCheck')"
+      >
+        Only numbers are allowed!
       </div>
     </form>
     <button
+      [disabled]="!addForm?.valid"
       (click)="save()"
-      routerLink="../fitnessequipment-search"
       class="btn btn-default"
     >
       Save
@@ -47,5 +106,6 @@
     <button routerLink="../fitnessequipment-search" class="btn btn-default">
       Return
     </button>
+    <div class="content" style="color: red">{{ response }}</div>
   </div>
 </div>

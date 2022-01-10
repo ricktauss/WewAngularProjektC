@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { FITNESSCENTER_MS_ROUTES } from './fitnesscenter-routes.module';
 import { FitnessEquipmentAddComponent } from './feature/fitness-equipment-add/fitness-equipment-add.component';
 import { FitnessEquipmentEditComponent } from './feature/fitness-equipment-edit/fitness-equipment-edit.component';
+import { NgxPrintModule } from 'ngx-print';
 
 
 
@@ -19,7 +20,8 @@ import { FitnessEquipmentEditComponent } from './feature/fitness-equipment-edit/
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(FITNESSCENTER_MS_ROUTES)
+    RouterModule.forChild(FITNESSCENTER_MS_ROUTES),
+    NgxPrintModule
   ]
 })
 export class FitnesscenterMsModule { }

@@ -1,6 +1,8 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { FitnessEquipmentService } from '../../data-access/fitness-equipment.service';
-import { FitnessEquipment } from '../../entities/fitnessEquipment';
+import { FitnessEquipment, initialFitnessEquipment, numberOnly } from '../../entities/fitnessEquipment';
 
 @Component({
   selector: 'flight-fitness-equipment-add',
@@ -9,38 +11,39 @@ import { FitnessEquipment } from '../../entities/fitnessEquipment';
 })
 export class FitnessEquipmentAddComponent implements OnInit {
 
-  id:number=0;
-  equipmentId:number=0;
-  equipmentName: string = "Laufband";
-  dateBought: string = '19.12.2021';
-  price:number = 0;
+  addfitnessEquipment:FitnessEquipment|undefined;
+  response:string='';
+  numberOnly:Function;
 
-
-  constructor(private fitnessEquipmentService: FitnessEquipmentService) {
-    console.log("Fitness Equipment Component was created!")
+  constructor(private fitnessEquipmentService: FitnessEquipmentService, private route : Router) {
+   
+    this.addfitnessEquipment = Object.assign({},initialFitnessEquipment);
+    this.numberOnly=numberOnly;
    }
 
    save():void{
-    
-    const fitnessEquipment:FitnessEquipment = {
-      id:this.id,
-      equipmentId:this.equipmentId,
-      dateBought:this.dateBought,
-      equipmentName:this.equipmentName,
-      price:this.price
-    }
-    
-     this.fitnessEquipmentService.addEquipment(fitnessEquipment).subscribe({
-
+     this.response ='';
+     this.fitnessEquipmentService.addEquipment(this.addfitnessEquipment!).subscribe({
       error:(errResp) => {
-        console.log("Error Loading Fitness Equipment Devices",errResp);
+       
+        console.log("Error Saving Fitness Equipment Device",errResp);
+        this.response = 'Error Saving Fitness Equipment';
+       
+      },complete:()=>{
+        console.log('completed');
+        this.route.navigate(['/', 'fitnessequipment-search']);
+        console.log('Saving Fitness Equipment in DB successful!')
       }
     })
+ 
    }
+
+   
 
 
 
   ngOnInit(): void {
+
   }
 
 }
