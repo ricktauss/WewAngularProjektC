@@ -1,3 +1,29 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <h3 >Mitglieder Suche</h3>
+  </div>
+  <div class="col-md-6">
+    <button  style="margin-top: 24px; margin-left: 220px" type="submit" class="btn btn-primary right">Neues Mitglied anlegen</button>
+  </div>
+</div>
+
+
+
+<form>
+  <div class="mb-3">
+    <label  class="form-label">Vorname</label>
+    <input type="text" class="form-control" [(ngModel)]="firstname" name="firstname"  >
+  </div>
+  <div class="mb-6">
+    <label  class="form-label">Nachname</label>
+    <input type="text" class="form-control"  [(ngModel)]="lastname" name="lastname" >
+  </div>
+
+  <button (click)="search()" style="margin-top: 12px" type="submit" class="btn btn-primary right">Search</button>
+</form>
+
+
 <table class="table" >
   <thead>
   <tr>
@@ -19,9 +45,12 @@
     <td>{{member.birthdate}}</td>
     <td>
       <button class="btn btn-primary">Edit</button>
-      <button class="btn btn-primary">Delete</button>
+      <button (click)="delete(member)" class="btn btn-primary">Delete</button>
     </td>
   </tr>
 
   </tbody>
+  <h3 class="text-center" *ngIf="members.length == 0">
+    Keine Mitglieder gefunden
+  </h3>
 </table>
