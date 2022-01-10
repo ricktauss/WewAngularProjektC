@@ -5,13 +5,15 @@ import { FitnessEquipmentSearchComponent } from './feature/fitness-equipment-sea
 import { FitnessEquipmentEditComponent } from './feature/fitness-equipment-edit/fitness-equipment-edit.component';
 import { RouterModule } from '@angular/router';
 import { FITNESSCENTER_MS_ROUTES } from './fitnesscenter-routes.module';
+import { MemberSearchComponent } from './feature/member-search/member-search.component';
 
 
 
 @NgModule({
   declarations: [
     FitnessEquipmentSearchComponent,
-    FitnessEquipmentEditComponent
+    FitnessEquipmentEditComponent,
+    MemberSearchComponent
 
   ],
   imports: [
