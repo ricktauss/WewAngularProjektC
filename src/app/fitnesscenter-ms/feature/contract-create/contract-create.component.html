@@ -10,34 +10,27 @@
   </div>
   <div class="content">
 
-    <form #f="ngForm">
+    <form #createForm="ngForm">
       <div class="form-group">
         <label>Contract No.</label>
         <input [(ngModel)]="contract!.contractId" name="contractID" class="form-control" required pattern="[0-9]*">
-        <number-input-validation-error [errors]="f.controls['contractID'].errors" [inputValue]="contract!.contractId">
-        </number-input-validation-error>
+        <contract-input-validation-error *ngIf="createForm.controls['contractID'].dirty"
+          [errors]="createForm.controls['contractID'].errors" [inputNumber]="contract!.contractId">
+        </contract-input-validation-error>
       </div>
 
       <div class="form-group">
         <label>First name</label>
-        <input [(ngModel)]="contract!.firstName" required minlength="3" name="firstName" class="form-control" pattern="[a-zA-Z ]*">
+        <input [(ngModel)]="contract!.firstName" name="firstName" class="form-control" contractName>
+        <contract-input-validation-error [errors]="createForm.controls['firstName'].errors" [mode]="1">
+        </contract-input-validation-error>
       </div>
-
-
-      <!-- Weiter mit herumprobieren Validatoren-->
-      <div *ngIf="f.controls['firstName'].invalid && f.controls['firstName'].dirty && f.controls['firstName'].touched" [ngStyle]="{'color':'red'}">
-        Darf nur Buchstabe sein und muss mindesten xxx haben
-        </div>
-        <div *ngIf="f.controls['firstName'].hasError('required')">
-        Input erforderlich
-      </div>
-
-
-
 
       <div class="form-group">
         <label>Last name</label>
-        <input [(ngModel)]="contract!.lastName" required minlength="3" name="lastName" class="form-control">
+        <input [(ngModel)]="contract!.lastName" name="lastName" class="form-control" contractName>
+        <contract-input-validation-error [errors]="createForm.controls['lastName'].errors" [mode]="1">
+        </contract-input-validation-error>
       </div>
 
       <div class="form-group">
@@ -46,21 +39,31 @@
       </div>
 
       <div class="form-group">
-        <label>Membership Duration</label>
-        <input [(ngModel)]="contract!.membershipDuration" name="membershipDuration" class="form-control" required pattern="[0-9]*">
-        <number-input-validation-error [errors]="f.controls['membershipDuration'].errors" [inputValue]="contract!.membershipDuration">
-        </number-input-validation-error>
+        <label>Membership Duration [Months]</label>
+        <input [(ngModel)]="contract!.membershipDuration" name="membershipDuration" class="form-control" required
+          pattern="[0-9]*">
+        <contract-input-validation-error *ngIf="createForm.controls['membershipDuration'].dirty"
+          [errors]="createForm.controls['membershipDuration'].errors" [inputNumber]="contract!.membershipDuration">
+        </contract-input-validation-error>
       </div>
 
       <div class="form-group">
-        <label>Membership Fee</label>
-        <input [(ngModel)]="contract!.membershipFee" name="membershipFee" class="form-control" required pattern="[0-9]*">
-        <number-input-validation-error [errors]="f.controls['membershipFee'].errors" [inputValue]="contract!.membershipFee">
-        </number-input-validation-error>
+        <label>Monthly Fee</label>
+        <input [(ngModel)]="contract!.membershipFee" name="membershipFee" class="form-control" required
+          pattern="[0-9]*[.|,][0-9]*">
+        <contract-input-validation-error *ngIf="createForm.controls['membershipFee'].dirty"
+          [errors]="createForm.controls['membershipFee'].errors" [inputNumber]="contract!.membershipFee">
+        </contract-input-validation-error>
       </div>
 
       <div class="form-group">
-        <button (click)="create()" class="btn btn-default">Create contract</button>
+        <button (click)="create()" class="btn btn-default"
+          [disabled]="!createForm.controls['contractID'].dirty || !createForm.controls['contractID'].valid ||
+          !createForm.controls['firstName'].dirty || !createForm.controls['firstName'].valid ||
+          !createForm.controls['lastName'].dirty || !createForm.controls['lastName'].valid ||
+          !createForm.controls['membershipDuration'].dirty || !createForm.controls['membershipDuration'].valid ||
+          !createForm.controls['membershipFee'].dirty || !createForm.controls['membershipFee'].valid">Create
+          contract</button>
         <span>
           {{ message }}
         </span>

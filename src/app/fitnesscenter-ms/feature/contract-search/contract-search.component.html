@@ -35,8 +35,8 @@
         <th>First name</th>
         <th>Last name</th>
         <th>Membership Start</th>
-        <th>Membership Duration</th>
-        <th>Membership Fee</th>
+        <th>Membership Duration [Months]</th>
+        <th>Monthly Fee</th>
         <th></th>
       </tr>
     </thead>
@@ -104,9 +104,10 @@
 
       <div class="form-group">
         <button (click)="update()" class="btn btn-default">Change contract</button>
-        <span>
+        <button (click)="delete()" class="btn btn-default">Delete contract</button>
+        <p>
           {{ message }}
-        </span>
+        </p>
       </div>
     </form>
 

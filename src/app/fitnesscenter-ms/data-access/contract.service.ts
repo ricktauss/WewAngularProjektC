@@ -40,5 +40,15 @@ export class ContractService {
     return this.http.post<Contract>(url, contract, { headers });
   }
 
+  delete(baseURL:string, contract:Contract): Observable<Contract> {
+    const url = baseURL + '/' + contract.id;
+
+    const headers = new HttpHeaders()
+      .set('Accept', 'application/json')
+      .set('Content-Type', 'application/json');
+
+    return this.http.delete<Contract>(url, { headers });
+  }
+
 
 }
