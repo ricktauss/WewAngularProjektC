@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { Contract } from '../../entities/contract';
 
 @Component({
-  selector: 'test',
+  selector: 'card-contract-outdated',
   templateUrl: './contract-outdated-card.component.html',
   styleUrls: ['./contract-outdated-card.component.css']
 })

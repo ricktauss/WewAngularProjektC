@@ -4,7 +4,7 @@ import { Contract, initialContract } from '../../entities/contract';
 import { ContractService } from '../../data-access/contract.service';
 
 @Component({
-  selector: 'flight-contract-create',
+  selector: 'contract-create',
   templateUrl: './contract-create.component.html',
   styleUrls: ['./contract-create.component.css'],
 })
