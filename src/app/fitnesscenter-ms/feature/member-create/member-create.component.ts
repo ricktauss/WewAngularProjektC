@@ -10,9 +10,11 @@ import {MemberService} from "../../data-access/member.service";
   styleUrls: ['./member-create.component.css']
 })
 export class MemberCreateComponent implements OnInit {
-
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private memberService: MemberService) { }
   member: Member = initialMember;
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private memberService: MemberService) {
+  this.member = Object.assign({},initialMember);
+  }
+
   ngOnInit(): void {
   }
 
@@ -20,10 +22,10 @@ export class MemberCreateComponent implements OnInit {
     this.memberService.create(this.member).subscribe({
 
       error: (errResp) => {
-        console.error('Error Create/Update Member', errResp);
+        console.error('Error Create Member', errResp);
       },
       complete: () => {
-        this.member = initialMember;
+
         this.router.navigate(['member-search']);
       },
     });

@@ -24,8 +24,8 @@ export class MemberService {
   search(firstname: string,lastname: string): Observable<Member[]>{
     const headers = new HttpHeaders().set('Accept', 'application/json');
     const params = new HttpParams()
-      .set('firstname', firstname)
-      .set('lastname', lastname);
+      .set('firstname_like', firstname)
+      .set('lastname_like', lastname);
 
     var result =  this.htttpClient.get<Member[]>(this.membersUrl, { headers, params });
 

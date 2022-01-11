@@ -3,7 +3,7 @@
     {
       "id": 1,
       "memberID": 1,
-      "firstname": "Bud",
+      "firstname": "Rudi",
       "lastname": "Spencer",
       "address": "Obergnas 9a",
       "birthdate": "2000-01-01",
@@ -16,6 +16,51 @@
       "lastname": "Hödl",
       "address": "Obergnas 9a",
       "birthdate": "1995-01-11T00:00:00.000Z",
+      "email": "lchoedl@gmail.com"
+    },
+    {
+      "id": 3,
+      "memberID": 0,
+      "firstname": "Carlos",
+      "lastname": "Pierce",
+      "address": "Am Feldweg 93",
+      "birthdate": "1998-12-01T00:00:00.000Z",
+      "email": "adipiscing@protonmail.edu"
+    },
+    {
+      "id": 4,
+      "memberID": 0,
+      "firstname": "Stefan",
+      "lastname": "Loreski",
+      "address": "Graz 143",
+      "birthdate": "1995-01-01T00:00:00.000Z",
+      "email": "stefan@gmail.com"
+    },
+    {
+      "id": 5,
+      "memberID": 0,
+      "firstname": "Ramalio",
+      "lastname": "Kokizsch",
+      "address": "Reininghaus 183",
+      "birthdate": "2011-11-28T00:00:00.000Z",
+      "email": "kokir@hotmail.com"
+    },
+    {
+      "id": 6,
+      "memberID": 0,
+      "firstname": "Lukas",
+      "lastname": "Hausmann",
+      "address": "St.Stefan 3",
+      "birthdate": "1994-01-01T00:00:00.000Z",
+      "email": "lcasldh@gmail.com"
+    },
+    {
+      "id": 7,
+      "memberID": 0,
+      "firstname": "Lukas",
+      "lastname": "Hödl",
+      "address": "Gnas 18",
+      "birthdate": "1955-01-01T00:00:00.000Z",
       "email": "lchoedl@gmail.com"
     }
   ],
@@ -127,15 +172,6 @@
       "startTime": "2007-01-11",
       "membershipDuration": "96",
       "membershipFee": "8.90"
-    },
-    {
-      "id": 13,
-      "contractId": "15",
-      "firstName": "Pat",
-      "lastName": "Prett",
-      "startTime": "2022-01-03",
-      "membershipDuration": "14",
-      "membershipFee": "12.10"
     }
   ],
   "fitnessEquipment": [
@@ -232,6 +268,14 @@
       "dateBought": "2022.01.01",
       "price": "50",
       "id": 27
+    },
+    {
+      "equipmentId": 111,
+      "equipmentName": "erhometer",
+      "equipmentCategory": "treadmill",
+      "dateBought": "2022-01-13",
+      "price": "100",
+      "id": 28
     }
   ]
 }
