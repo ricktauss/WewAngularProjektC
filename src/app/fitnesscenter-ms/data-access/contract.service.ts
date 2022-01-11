@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { Contract } from '../entities/contract';
+import { ContractSearchComponent } from '../feature/contract-search/contract-search.component';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -8,10 +9,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ContractService {
+  constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient) {}
-
-  search(firstName:string, lastName:string, baseURL:string): Observable<Contract[]> {
+  search(
+    firstName: string,
+    lastName: string,
+    baseURL: string
+  ): Observable<Contract[]> {
     const headers = new HttpHeaders().set('Accept', 'application/json');
     const params = new HttpParams()
       .set('firstName_like', firstName)
@@ -20,7 +24,7 @@ export class ContractService {
     return this.http.get<Contract[]>(baseURL, { headers, params });
   }
 
-  update(baseURL:string, contract:Contract): Observable<Contract> {
+  update(baseURL: string, contract: Contract): Observable<Contract> {
     const url = baseURL + '/' + contract.id;
 
     const headers = new HttpHeaders()
@@ -30,7 +34,7 @@ export class ContractService {
     return this.http.put<Contract>(url, contract, { headers });
   }
 
-  create(baseURL:string, contract:Contract): Observable<Contract> {
+  create(baseURL: string, contract: Contract): Observable<Contract> {
     const url = baseURL;
 
     const headers = new HttpHeaders()
@@ -40,7 +44,7 @@ export class ContractService {
     return this.http.post<Contract>(url, contract, { headers });
   }
 
-  delete(baseURL:string, contract:Contract): Observable<Contract> {
+  delete(baseURL: string, contract: Contract): Observable<Contract> {
     const url = baseURL + '/' + contract.id;
 
     const headers = new HttpHeaders()
@@ -50,11 +54,27 @@ export class ContractService {
     return this.http.delete<Contract>(url, { headers });
   }
 
-  getAll(baseURL:string): Observable<Contract[]> {
+  getAll(baseURL: string): Observable<Contract[]> {
     const headers = new HttpHeaders().set('Accept', 'application/json');
-    
+
     return this.http.get<Contract[]>(baseURL, { headers });
   }
 
+  checkValidState(contracts: Contract[]): Contract {
 
+    contracts.forEach((c) => {
+
+      const startDate = new Date(c.startTime); //convert time from string to date
+      const endDate = startDate;
+      endDate.setMonth(endDate.getMonth() + Number(c.membershipDuration)); //calculate end date with months
+
+      if (endDate.getTime() > Date.now()) {
+        console.log(`Contract from ${c.firstName} valid`);
+      } else {
+        console.log(`Contract from ${c.firstName} not valid`);
+      }
+    });
+
+    return contracts[0];
+  }
 }

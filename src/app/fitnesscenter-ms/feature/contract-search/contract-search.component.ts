@@ -17,7 +17,7 @@ export class ContractSearchComponent implements OnInit {
   baseURL: string = 'http://localhost:3000/contracts';
   outdatedView: boolean = false;
 
-  constructor(private contractService: ContractService) {}
+  constructor(private contractService: ContractService) { }
 
   ngOnInit(): void {
     console.log('ContractSearchComponent created ...');
@@ -84,7 +84,9 @@ export class ContractSearchComponent implements OnInit {
       .getAll(this.baseURL)
       .subscribe({
         next: (contracts: Contract[]) => {
-          this.contracts = contracts;
+          //this.contracts = contracts;
+          this.contracts[0] = this.contractService.checkValidState(contracts);
+
           this.outdatedView = true;
         },
         error: (errResp) => {
