@@ -4,7 +4,7 @@
     <h3 >Mitglieder Suche</h3>
   </div>
   <div class="col-md-6">
-    <button  style="margin-top: 24px; margin-left: 220px" type="submit" class="btn btn-primary right">Neues Mitglied anlegen</button>
+    <button  routerLink="/member-create" style="margin-top: 24px; margin-left: 220px"  class="btn btn-primary right">Neues Mitglied anlegen</button >
   </div>
 </div>
 
@@ -42,9 +42,9 @@
     <td>{{member.lastname}}</td>
     <td>{{member.email}}</td>
     <td>{{member.address}}</td>
-    <td>{{member.birthdate}}</td>
+    <td>{{member.birthdate | date: 'yyyy-MM-dd' }}</td>
     <td>
-      <button class="btn btn-primary">Edit</button>
+      <button routerLink="/member-create-edit/{{member.id}}" class="btn btn-primary">Edit</button>
       <button (click)="delete(member)" class="btn btn-primary">Delete</button>
     </td>
   </tr>

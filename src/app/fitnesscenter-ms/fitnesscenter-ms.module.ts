@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { FITNESSCENTER_MS_ROUTES } from './fitnesscenter-routes.module';
 import { MemberSearchComponent } from './feature/member-search/member-search.component';
 import { MemberCreateEditComponent } from './feature/member-create-edit/member-create-edit.component';
+import { MemberCreateComponent } from './feature/member-create/member-create.component';
 
 
 
@@ -15,7 +16,8 @@ import { MemberCreateEditComponent } from './feature/member-create-edit/member-c
     FitnessEquipmentSearchComponent,
     FitnessEquipmentEditComponent,
     MemberSearchComponent,
-    MemberCreateEditComponent
+    MemberCreateEditComponent,
+    MemberCreateComponent
 
   ],
   imports: [

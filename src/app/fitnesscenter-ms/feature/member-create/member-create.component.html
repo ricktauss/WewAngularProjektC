@@ -2,7 +2,7 @@
   <div class="col-md-6">
 
     <h3 style="margin-left: 12px"
-    >Mitgliedsdaten ändern</h3>
+    >Neues Mitglied erstellen</h3>
   </div>
 
   <div class="col-md-6">
@@ -37,6 +37,6 @@
     <input type="date"  [value] = "member.birthdate | date: 'yyyy-MM-dd'"  (input) = "dateChanged($event)" class="form-control" >
   </div>
   <button
-    (click)="update()" style="margin-left: 12px; margin-top: 12px" type="submit" class="btn btn-primary">Ändern</button>
+    (click)="create()" style="margin-left: 12px; margin-top: 12px" type="submit" class="btn btn-primary">Speichern</button>
 
 </form>

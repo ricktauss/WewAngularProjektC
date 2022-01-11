@@ -17,6 +17,10 @@ export class MemberService {
     return result;
   }
 
+  getMemberById(id: number): Observable<Member>{
+    return this.htttpClient.get<Member>(this.membersUrl + "/" + id);
+  }
+
   search(firstname: string,lastname: string): Observable<Member[]>{
     const headers = new HttpHeaders().set('Accept', 'application/json');
     const params = new HttpParams()
@@ -34,6 +38,34 @@ export class MemberService {
     return response;
 
   }
+
+  update(member: Member): Observable<Member> {
+
+
+    const headers = new HttpHeaders()
+      .set('Accept', 'application/json')
+      .set('Content-Type', 'application/json');
+
+    return this.htttpClient.put<Member>(this.membersUrl + "/" + member.id , member , { headers });
+  }
+
+  create(member: Member): Observable<Member> {
+
+
+    const headers = new HttpHeaders()
+      .set('Accept', 'application/json')
+      .set('Content-Type', 'application/json');
+
+    return this.htttpClient.post<Member>(this.membersUrl, member , { headers });
+  }
+
+
+
+
+
+
+
+
 
 
 
