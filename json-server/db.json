@@ -1,5 +1,4 @@
 {
-
   "members": [
     {
       "id": 1,
@@ -10,8 +9,16 @@
       "birthdate": "2000-01-01",
       "email": "lukas@gmail.com"
     },
+    {
+      "id": 2,
+      "memberID": 0,
+      "firstname": "Lukas",
+      "lastname": "Hödl",
+      "address": "Obergnas 9a",
+      "birthdate": "1995-01-11T00:00:00.000Z",
+      "email": "lchoedl@gmail.com"
+    }
   ],
-
   "contracts": [
     {
       "id": 1,
