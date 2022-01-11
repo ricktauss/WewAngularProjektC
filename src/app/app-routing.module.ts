@@ -1,5 +1,7 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { Routes } from '@angular/router';
+import {MemberCreateEditComponent} from "./fitnesscenter-ms/feature/member-create-edit/member-create-edit.component";
 
 export const APP_ROUTES: Routes = [
   {
