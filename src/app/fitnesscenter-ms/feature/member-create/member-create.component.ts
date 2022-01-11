@@ -23,6 +23,7 @@ export class MemberCreateComponent implements OnInit {
         console.error('Error Create/Update Member', errResp);
       },
       complete: () => {
+        this.member = initialMember;
         this.router.navigate(['member-search']);
       },
     });
