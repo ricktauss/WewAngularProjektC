@@ -127,15 +127,6 @@
       "startTime": "2007-01-11",
       "membershipDuration": "96",
       "membershipFee": "8.90"
-    },
-    {
-      "id": 13,
-      "contractId": "15",
-      "firstName": "Pat",
-      "lastName": "Prett",
-      "startTime": "2022-01-03",
-      "membershipDuration": "14",
-      "membershipFee": "12.10"
     }
   ],
   "fitnessEquipment": [
@@ -218,20 +209,20 @@
       "id": 25
     },
     {
-      "equipmentId": 33,
-      "equipmentName": "Laufband e.g.",
-      "equipmentCategory": "treadmill",
-      "dateBought": "2022-01-20",
-      "price": "5",
-      "id": 26
-    },
-    {
       "equipmentId": 55,
       "equipmentName": "Hantel",
       "equipmentCategory": "weight station",
       "dateBought": "2022.01.01",
       "price": "50",
       "id": 27
+    },
+    {
+      "equipmentId": 45165,
+      "equipmentName": "treadmillXZ2",
+      "equipmentCategory": "treadmill",
+      "dateBought": "2022.01.01",
+      "price": "120.5",
+      "id": 28
     }
   ]
 }
