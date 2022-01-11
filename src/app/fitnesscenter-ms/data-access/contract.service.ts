@@ -50,5 +50,11 @@ export class ContractService {
     return this.http.delete<Contract>(url, { headers });
   }
 
+  getAll(baseURL:string): Observable<Contract[]> {
+    const headers = new HttpHeaders().set('Accept', 'application/json');
+    
+    return this.http.get<Contract[]>(baseURL, { headers });
+  }
+
 
 }

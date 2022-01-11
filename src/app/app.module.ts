@@ -2,7 +2,6 @@ import { APP_ROUTES } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ContractSearchComponent } from './fitnesscenter-ms/feature/contract-search/contract-search.component';
-import { CurrencyPipe } from '@angular/common';
 import { FitnesscenterMsModule } from './fitnesscenter-ms/fitnesscenter-ms.module';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';

@@ -76,4 +76,18 @@ export class ContractSearchComponent implements OnInit {
 
     }
   }
+
+  getOutdatedContracts(): void {
+    this.contractService
+      .getAll(this.baseURL)
+      .subscribe({
+        next: (contracts: Contract[]) => {
+          this.contracts = contracts;
+        },
+        error: (errResp) => {
+          console.error('Error loading contracts', errResp);
+        },
+      });
+  }
+
 }
