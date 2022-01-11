@@ -39,4 +39,4 @@ import { SharedModule } from '../shared/shared.module';
     NgChartsModule
   ]
 })
-export class FitnesscenterMsModule { }
+export class FitnesscenterMsModule {}
