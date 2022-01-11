@@ -15,7 +15,6 @@ import { NgChartsModule } from 'ng2-charts';
 import { NgModule } from '@angular/core';
 import { NgxPrintModule } from 'ngx-print';
 import { RouterModule } from '@angular/router';
-import { FITNESSCENTER_MS_ROUTES } from './fitnesscenter-routes.module';
 import { MemberSearchComponent } from './feature/member-search/member-search.component';
 import { MemberCreateEditComponent } from './feature/member-create-edit/member-create-edit.component';
 import { MemberCreateComponent } from './feature/member-create/member-create.component';
@@ -35,7 +34,7 @@ import { SharedModule } from '../shared/shared.module';
     ContractStatisticComponent,
     ContractOutdatedCardComponent,
     BarchartComponent,
-    MynewHtmlTestComponent
+    MynewHtmlTestComponent,
     FitnessEquipmentEditComponent,
     MemberSearchComponent,
     MemberCreateEditComponent,
