@@ -1,5 +1,5 @@
 export interface Contract {
-  id:number;
+  id: number;
   contractId: number;
   firstName: string;
   lastName: string;

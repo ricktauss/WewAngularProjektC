@@ -30,8 +30,6 @@ import { SidebarComponent } from './core/ui/sidebar/sidebar.component';
     SharedModule
   ],
   providers: [],
-  bootstrap: [
-    AppComponent
-  ]
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

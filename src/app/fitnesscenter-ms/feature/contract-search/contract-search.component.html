@@ -1,8 +1,11 @@
-<div><a routerLink="/contract-creation">
-    <button class="btn btn-default">-&gt; Create New Contract</button></a>
+<div>
+  <a routerLink="/contract-creation">
+    <button class="btn btn-default">-&gt; Create New Contract</button></a
+  >
   <a routerLink="/contract-statistic">
-    <button class="btn btn-default">-&gt; Contract Statistic</button></a>
-  <br><br>
+    <button class="btn btn-default">-&gt; Contract Statistic</button></a
+  >
+  <br /><br />
 </div>
 
 <div class="card">
@@ -22,13 +25,20 @@
       </div>
 
       <div class="form-group">
-        <button class="btn btn-default" [disabled]="!firstName && !lastName" (click)="search()">Search</button>
-        <button class="btn btn-default" (click)="getOutdatedContracts()">Show outdated</button>
+        <button
+          class="btn btn-default"
+          [disabled]="!firstName && !lastName"
+          (click)="search()"
+        >
+          Search
+        </button>
+        <button class="btn btn-default" (click)="getOutdatedContracts()">
+          Show outdated
+        </button>
       </div>
     </form>
   </div>
 </div>
-
 
 <div class="card">
   <table class="table table-condensed" *ngIf="contracts.length > 0">
@@ -50,7 +60,7 @@
         <td>{{ c.lastName }}</td>
         <td>{{ c.startTime | date: "dd.MM.yyyy" }}</td>
         <td>{{ c.membershipDuration }}</td>
-        <td>{{ c.membershipFee | currencyFormatter:'EUR' : 1 }}</td>
+        <td>{{ c.membershipFee | currencyFormatter: "EUR":1 }}</td>
         <td>
           <a (click)="select(c)">Select</a>
         </td>
@@ -69,53 +79,80 @@
   </div>
 </div>
 
-
 <div class="card" *ngIf="selectedContract">
   <div class="header">
     <h2 class="title">Contract Edit</h2>
   </div>
   <div class="content">
-
     <form>
       <div class="form-group">
         <label>Contract No.</label>
-        <input [ngModel]="selectedContract.contractId" name="contractID" class="form-control" readonly="true">
+        <input
+          [ngModel]="selectedContract.contractId"
+          name="contractID"
+          class="form-control"
+          readonly="true"
+        />
       </div>
 
       <div class="form-group">
         <label>First name</label>
-        <input [(ngModel)]="selectedContract.firstName" name="firstName" class="form-control">
+        <input
+          [(ngModel)]="selectedContract.firstName"
+          name="firstName"
+          class="form-control"
+        />
       </div>
 
       <div class="form-group">
         <label>Last name</label>
-        <input [(ngModel)]="selectedContract.lastName" name="lastName" class="form-control">
+        <input
+          [(ngModel)]="selectedContract.lastName"
+          name="lastName"
+          class="form-control"
+        />
       </div>
 
       <div class="form-group">
         <label>Membership Start</label>
-        <input [(ngModel)]="selectedContract.startTime" name="startTime" class="form-control" type="date">
+        <input
+          [(ngModel)]="selectedContract.startTime"
+          name="startTime"
+          class="form-control"
+          type="date"
+        />
       </div>
 
       <div class="form-group">
         <label>Membership Duration</label>
-        <input [(ngModel)]="selectedContract.membershipDuration" name="membershipDuration" class="form-control"
-          type="datetime">
+        <input
+          [(ngModel)]="selectedContract.membershipDuration"
+          name="membershipDuration"
+          class="form-control"
+          type="datetime"
+        />
       </div>
 
       <div class="form-group">
         <label>Membership Fee</label>
-        <input [(ngModel)]="selectedContract.membershipFee" name="membershipFee" class="form-control">
+        <input
+          [(ngModel)]="selectedContract.membershipFee"
+          name="membershipFee"
+          class="form-control"
+        />
       </div>
 
       <div class="form-group">
-        <button (click)="update()" class="btn btn-default">Change contract</button>
-        <button (click)="delete()" class="btn btn-default">Delete contract</button>
+        <button (click)="update()" class="btn btn-default">
+          Change contract
+        </button>
+        <button (click)="delete()" class="btn btn-default">
+          Delete contract
+        </button>
         <p>
           {{ message }}
         </p>
       </div>
     </form>
-
   </div>
 </div>

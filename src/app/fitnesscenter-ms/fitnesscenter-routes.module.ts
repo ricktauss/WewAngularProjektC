@@ -11,8 +11,8 @@ export const FITNESSCENTER_MS_ROUTES: Routes = [
     component: FitnessEquipmentSearchComponent
   },
   {
-    path:'fitnessequipment-add',
-    component:FitnessEquipmentAddComponent
+    path: 'fitnessequipment-add',
+    component: FitnessEquipmentAddComponent
   },
   {
     path: 'contract-search',
