@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CurrencyFormatterPipe implements PipeTransform {
   transform(
-    value: number,
+    value: number | undefined,
     currencyType: string,
     decimalPlaces: number
   ): string {
@@ -21,6 +21,6 @@ export class CurrencyFormatterPipe implements PipeTransform {
         break;
     }
   //dezimalstellen
-    return Math.round(value*Math.pow(10,decimalPlaces))/Math.pow(10,decimalPlaces) + currencyChar;
+    return Math.round(value!*Math.pow(10,decimalPlaces))/Math.pow(10,decimalPlaces) + currencyChar;
   }
 }

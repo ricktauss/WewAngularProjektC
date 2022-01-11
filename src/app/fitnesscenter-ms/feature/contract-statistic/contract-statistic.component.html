@@ -1,18 +1,11 @@
-<div><a routerLink="/contract-search">
-  <button class="btn btn-default">
-    &lt;- Contract search</button></a>
-  <button class="btn btn-default" (click)="refresh()">
-    Refresh</button>
-  <br><br>
+<div>
+  <a routerLink="/contract-search">
+    <button class="btn btn-default">&lt;- Contract search</button></a>
+  <button class="btn btn-default" (click)="refresh()">Refresh</button>
+  <br /><br />
 </div>
 
-<div>contract-statistic works!</div>
-<div>Total monthly fee: {{sumMonthFees}}</div>
+<h4>Total monthly revenue: {{ sumMonthFees | currencyFormatter: "EUR":1 }}</h4>
 
-<div class="card">
-  <div class="content">
-    <pre>{{ contracts | json }}</pre>
-  </div>
-</div>
-
-<fitness-barchart [outdatedContracts]="outdatedContracts" [validContracts]="validContracts"></fitness-barchart>
+<fitness-barchart *ngIf="outdatedContracts > 0 || validContracts > 0" [outdatedContracts]="outdatedContracts" [validContracts]="validContracts">
+</fitness-barchart>

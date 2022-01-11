@@ -15,6 +15,7 @@ export class ContractSearchComponent implements OnInit {
   selectedContract: Contract | null = null;
   message: string = '';
   baseURL: string = 'http://localhost:3000/contracts';
+  outdatedView: boolean = false;
 
   constructor(private contractService: ContractService) {}
 
@@ -32,6 +33,7 @@ export class ContractSearchComponent implements OnInit {
       .subscribe({
         next: (contracts: Contract[]) => {
           this.contracts = contracts;
+          this.outdatedView = false;
         },
         error: (errResp) => {
           console.error('Error loading contracts', errResp);
@@ -83,6 +85,7 @@ export class ContractSearchComponent implements OnInit {
       .subscribe({
         next: (contracts: Contract[]) => {
           this.contracts = contracts;
+          this.outdatedView = true;
         },
         error: (errResp) => {
           console.error('Error loading contracts', errResp);

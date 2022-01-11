@@ -6,13 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./barchart.component.css']
 })
 export class BarchartComponent implements OnInit {
-@Input() outdatedContracts : number = 0;
-@Input() validContracts : number = 0;
+  @Input() outdatedContracts: number | null = null;
+  @Input() validContracts: number | null = null;
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
+
 
   // ADD CHART OPTIONS.
   chartOptions = {
@@ -20,16 +22,18 @@ export class BarchartComponent implements OnInit {
     maintainAspectRatio: false
   }
 
-  labels =  ['Contract status'];
+  labels = ['Contract status'];
 
   // STATIC DATA FOR THE CHART IN JSON FORMAT.
   chartData = [
     {
       label: 'outdated',
+      //data: [this.outdatedContracts]
       data: [this.outdatedContracts]
     },
     {
       label: 'valid',
+      //data: [this.validContracts]
       data: [this.validContracts]
     }
   ];

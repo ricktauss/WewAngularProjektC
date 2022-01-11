@@ -3,14 +3,15 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { Contract } from 'src/app/fitnesscenter-ms/entities/contract';
 
 @Component({
-  selector: 'card-contract-outdated',
+  selector: 'contract-outdated-card',
   templateUrl: './contract-outdated-card.component.html',
   styleUrls: ['./contract-outdated-card.component.css']
 })
 export class ContractOutdatedCardComponent implements OnInit, OnDestroy {
   @Input() item: Contract | undefined;
-  @Input() selected: boolean = false;
-  @Output() selectedChange = new EventEmitter<boolean>();
+  @Input() selected: Contract | undefined;
+  @Output() selectedChange = new EventEmitter<Contract>();
+  
 
   ngOnInit(): void {
     console.log('ContractOutdatedCard INIT');
@@ -21,8 +22,7 @@ export class ContractOutdatedCardComponent implements OnInit, OnDestroy {
   }
 
   toggleSelection():void {
-    this.selected = !this.selected;
-    this.selectedChange.emit(this.selected);
+    this.selectedChange.emit(this.item);
   }
 
 }

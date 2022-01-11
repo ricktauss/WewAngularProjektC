@@ -12,8 +12,8 @@ export class ContractStatisticComponent implements OnInit, OnDestroy {
   contracts: Contract[] | null = null;
   baseURL: string = 'http://localhost:3000/contracts';
   sumMonthFees: number = 0;
-  validContracts: number = 99;
-  outdatedContracts: number = 10;
+  validContracts: number = 0;
+  outdatedContracts: number = 0;
 
   constructor(private contractService: ContractService) {}
 
@@ -35,6 +35,8 @@ export class ContractStatisticComponent implements OnInit, OnDestroy {
       next: (contracts: Contract[]) => {
         this.contracts = contracts;
         console.log('Get all contracts DONE');
+        this.validContracts  = 10;
+        this.outdatedContracts = 50;
         this.createStatistic();
       },
       error: (errResponse) => {
