@@ -1,15 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { CommonModule } from '@angular/common';
+import { CurrencyFormatterPipe } from './pipes/currencyFormatter.pipe';
 import { EquipmentNameDirective } from './validation/equipment-name.directive';
-
-
-
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
-    EquipmentNameDirective,
-   
+    CurrencyFormatterPipe,
+    EquipmentNameDirective
   ],
   imports: [
     CommonModule,
@@ -19,7 +18,7 @@ import { EquipmentNameDirective } from './validation/equipment-name.directive';
   exports:[
     FormsModule,
     EquipmentNameDirective,
-    
+    CurrencyFormatterPipe
   ]
 })
 export class SharedModule { }

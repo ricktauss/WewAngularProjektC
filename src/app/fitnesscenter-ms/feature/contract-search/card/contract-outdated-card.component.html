@@ -1,0 +1,28 @@
+<div
+    class="card"
+    [ngStyle]="{'background-color': (selected) ? 'rgb(204, 197, 185)' : 'white' }">
+
+    <div class="header">
+        <h2 class="title">{{item?.firstName}} - {{item?.lastName}}</h2>
+        <h4>
+          <ng-content select="span[myAttr].my-title"></ng-content>
+        </h4>
+    </div>
+
+    <div class="content">
+        <p>Contract-ID.: #{{item?.contractId}}</p>
+        <p>Membership Start: {{item?.startTime | date:'dd.MM.yyyy HH:mm'}}</p>
+        <p>Membership Duration: {{item?.membershipDuration}}</p>
+        <p>Monthly Fee: {{item?.membershipFee}}</p>
+        <p>
+          <ng-content></ng-content>
+        </p>
+        <p>
+            <button
+              class="btn btn-default"
+              (click)="toggleSelection()">
+              {{ selected ? 'Cancel' : 'Edit' }}
+            </button>
+        </p>
+  </div>
+</div>

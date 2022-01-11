@@ -1,0 +1,74 @@
+<div><a routerLink="/contract-search">
+    <button class="btn btn-default">
+      &lt;- Contract search</button>
+    <br><br>
+  </a></div>
+
+<div class="card">
+  <div class="header">
+    <h2 class="title">Create new contract</h2>
+  </div>
+  <div class="content">
+
+    <form #createForm="ngForm">
+      <div class="form-group">
+        <label>Contract No.</label>
+        <input [(ngModel)]="contract!.contractId" name="contractID" class="form-control" required pattern="[0-9]*">
+        <contract-input-validation-error *ngIf="createForm.controls['contractID'].dirty"
+          [errors]="createForm.controls['contractID'].errors" [inputNumber]="contract!.contractId">
+        </contract-input-validation-error>
+      </div>
+
+      <div class="form-group">
+        <label>First name</label>
+        <input [(ngModel)]="contract!.firstName" name="firstName" class="form-control" contractName>
+        <contract-input-validation-error [errors]="createForm.controls['firstName'].errors" [mode]="1">
+        </contract-input-validation-error>
+      </div>
+
+      <div class="form-group">
+        <label>Last name</label>
+        <input [(ngModel)]="contract!.lastName" name="lastName" class="form-control" contractName>
+        <contract-input-validation-error [errors]="createForm.controls['lastName'].errors" [mode]="1">
+        </contract-input-validation-error>
+      </div>
+
+      <div class="form-group">
+        <label>Membership Start</label>
+        <input [(ngModel)]="contract!.startTime" name="startTime" class="form-control" type="date">
+      </div>
+
+      <div class="form-group">
+        <label>Membership Duration [Months]</label>
+        <input [(ngModel)]="contract!.membershipDuration" name="membershipDuration" class="form-control" required
+          pattern="[0-9]*">
+        <contract-input-validation-error *ngIf="createForm.controls['membershipDuration'].dirty"
+          [errors]="createForm.controls['membershipDuration'].errors" [inputNumber]="contract!.membershipDuration">
+        </contract-input-validation-error>
+      </div>
+
+      <div class="form-group">
+        <label>Monthly Fee</label>
+        <input [(ngModel)]="contract!.membershipFee" name="membershipFee" class="form-control" required
+          pattern="^[0-9]*(.|,)?[0-9]*">
+        <contract-input-validation-error *ngIf="createForm.controls['membershipFee'].dirty"
+          [errors]="createForm.controls['membershipFee'].errors" [inputNumber]="contract!.membershipFee">
+        </contract-input-validation-error>
+      </div>
+
+      <div class="form-group">
+        <button (click)="create()" class="btn btn-default"
+          [disabled]="!createForm.controls['contractID'].dirty || !createForm.controls['contractID'].valid ||
+          !createForm.controls['firstName'].dirty || !createForm.controls['firstName'].valid ||
+          !createForm.controls['lastName'].dirty || !createForm.controls['lastName'].valid ||
+          !createForm.controls['membershipDuration'].dirty || !createForm.controls['membershipDuration'].valid ||
+          !createForm.controls['membershipFee'].dirty || !createForm.controls['membershipFee'].valid">Create
+          contract</button>
+        <span>
+          {{ message }}
+        </span>
+      </div>
+    </form>
+
+  </div>
+</div>

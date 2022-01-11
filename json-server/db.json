@@ -1,0 +1,217 @@
+{
+  "contracts": [
+    {
+      "id": 1,
+      "contractId": 1,
+      "firstName": "Bud",
+      "lastName": "Spencer",
+      "startTime": "1956-09-15",
+      "membershipDuration": 240,
+      "membershipFee": 10
+    },
+    {
+      "id": 2,
+      "contractId": 2,
+      "firstName": "Hulk",
+      "lastName": "Hogan",
+      "startTime": "2011-01-01",
+      "membershipDuration": 12,
+      "membershipFee": 39
+    },
+    {
+      "id": 3,
+      "contractId": 3,
+      "firstName": "Arnold",
+      "lastName": "Schwarzenegger",
+      "startTime": "2012-08-05",
+      "membershipDuration": 36,
+      "membershipFee": 40.9
+    },
+    {
+      "id": 4,
+      "contractId": 4,
+      "firstName": "Dwayne",
+      "lastName": "Johnson",
+      "startTime": "2021-02-01",
+      "membershipDuration": 24,
+      "membershipFee": 44.9
+    },
+    {
+      "id": 5,
+      "contractId": 5,
+      "firstName": "Arnold",
+      "lastName": "Schwarzenegger",
+      "startTime": "2012-08-05",
+      "membershipDuration": "31",
+      "membershipFee": 40.9
+    },
+    {
+      "id": 6,
+      "contractId": "6",
+      "firstName": "Sylvester",
+      "lastName": "Stallone",
+      "startTime": "2011-06-15",
+      "membershipDuration": "36",
+      "membershipFee": "20.10"
+    },
+    {
+      "id": 7,
+      "contractId": "7",
+      "firstName": "Jason",
+      "lastName": "Statham",
+      "startTime": "2019-06-10",
+      "membershipDuration": "48",
+      "membershipFee": "35.90"
+    },
+    {
+      "id": 8,
+      "contractId": "8",
+      "firstName": "Homer J.",
+      "lastName": "Simpson",
+      "startTime": "2021-01-03",
+      "membershipDuration": "9",
+      "membershipFee": "50.90"
+    },
+    {
+      "id": 9,
+      "contractId": "9",
+      "firstName": "Ned",
+      "lastName": "Flanders",
+      "startTime": "2020-05-03",
+      "membershipDuration": "24",
+      "membershipFee": "45.0"
+    },
+    {
+      "id": 10,
+      "contractId": "10",
+      "firstName": "Rektor Seymor",
+      "lastName": "Skinner",
+      "startTime": "2016-06-03",
+      "membershipDuration": "12",
+      "membershipFee": "12.10"
+    },
+    {
+      "id": 11,
+      "contractId": "11",
+      "firstName": "Hausmeister",
+      "lastName": "Willie",
+      "startTime": "2014-06-03",
+      "membershipDuration": "48",
+      "membershipFee": "9.90"
+    },
+    {
+      "id": 12,
+      "contractId": "12",
+      "firstName": "Fat",
+      "lastName": "Tony",
+      "startTime": "2007-01-11",
+      "membershipDuration": "96",
+      "membershipFee": "8.90"
+    },
+    {
+      "id": 13,
+      "contractId": "15",
+      "firstName": "Pat",
+      "lastName": "Prett",
+      "startTime": "2022-01-03",
+      "membershipDuration": "14",
+      "membershipFee": "12.10"
+    }
+  ],
+  "fitnessEquipment": [
+    {
+      "equipmentId": "sfasdf",
+      "dateBought": "19.12.2021",
+      "equipmentName": "Hanteln",
+      "price": 0,
+      "id": 2
+    },
+    {
+      "equipmentId": 0,
+      "dateBought": "19.12.2021",
+      "equipmentName": "asdfsdaf",
+      "price": "asdf",
+      "id": 4
+    },
+    {
+      "equipmentId": 0,
+      "equipmentName": "Laufband e.g.",
+      "dateBought": "1993-01-08",
+      "price": "950",
+      "id": 10
+    },
+    {
+      "equipmentId": 0,
+      "equipmentName": "Laufband e.g.",
+      "dateBought": "2022-01-19",
+      "price": "700",
+      "id": 12
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 17
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 18
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 19
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 20
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 21
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 22
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 23
+    },
+    {
+      "equipmentId": "1215",
+      "equipmentName": "ergometer",
+      "dateBought": "2022.01.01",
+      "price": "500",
+      "id": 24
+    },
+    {
+      "equipmentId": 333,
+      "equipmentName": "ergometer",
+      "equipmentCategory": "treadmill",
+      "dateBought": "2022.01.01",
+      "price": "7",
+      "id": 25
+    },
+    {
+      "equipmentId": 33,
+      "equipmentName": "Laufband e.g.",
+      "equipmentCategory": "treadmill",
+      "dateBought": "2022-01-20",
+      "price": "5",
+      "id": 26
+    },
+    {
+      "equipmentId": 55,
+      "equipmentName": "Hantel",
+      "equipmentCategory": "weight station",
+      "dateBought": "2022.01.01",
+      "price": "50",
+      "id": 27
+    }
+  ]
+}

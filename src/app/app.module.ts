@@ -1,29 +1,33 @@
 import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './core/ui/navbar/navbar.component';
-import { SidebarComponent } from './core/ui/sidebar/sidebar.component';
-import { FitnesscenterMsModule } from './fitnesscenter-ms/fitnesscenter-ms.module';
-import { HomeComponent } from './home/home.component';
-import { RouterModule } from '@angular/router';
-import { APP_ROUTES } from './app-routing.module';
-import { FitnessEquipmentEditComponent } from './fitnesscenter-ms/feature/fitness-equipment-edit/fitness-equipment-edit.component';
 
+import { APP_ROUTES } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { ContractSearchComponent } from './fitnesscenter-ms/feature/contract-search/contract-search.component';
+import { FitnesscenterMsModule } from './fitnesscenter-ms/fitnesscenter-ms.module';
+import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './core/ui/navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+import { SharedModule } from './shared/shared.module';
+import { SidebarComponent } from './core/ui/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    ContractSearchComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FitnesscenterMsModule,    
-    RouterModule.forRoot(APP_ROUTES)
+    FitnesscenterMsModule,
+    FormsModule,
+    RouterModule.forRoot(APP_ROUTES),
+    SharedModule
   ],
   providers: [],
   bootstrap: [

@@ -1,0 +1,20 @@
+<div *ngIf="errors && errors['required']" class="error-text">
+  ! This field is required.
+</div>
+
+<div *ngIf="errors && errors['minlength']" class="error-text">
+  ! This field is too short.
+</div>
+
+<div *ngIf="errors && errors['pattern'] || inputNumber!<=0 && mode==0" class="error-text">
+  ! Just digits (0-9) and value greate zero are allowed
+</div>
+
+
+<div *ngIf="errors && errors['nameCharacters']" class="error-text">
+  ! Input not valid. Just {{errors['nameCharacters']}} allowed
+</div>
+
+<div *ngIf="errors && errors['nameLength']" class="error-text">
+  ! Input must be between {{errors['nameLength'].minLength}} and {{errors['nameLength'].maxLength}}
+</div>
