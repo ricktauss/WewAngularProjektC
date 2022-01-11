@@ -6,19 +6,8 @@ import { EquipmentNameDirective } from './validation/equipment-name.directive';
 import { NgModule } from '@angular/core';
 
 @NgModule({
-  declarations: [
-    CurrencyFormatterPipe,
-    EquipmentNameDirective
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  exports:[
-    FormsModule,
-    EquipmentNameDirective,
-    CurrencyFormatterPipe
-  ]
+  declarations: [CurrencyFormatterPipe, EquipmentNameDirective],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  exports: [FormsModule, EquipmentNameDirective, CurrencyFormatterPipe]
 })
 export class SharedModule { }
