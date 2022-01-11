@@ -1,3 +1,4 @@
+import { BarchartComponent } from './feature/contract-statistic/barchart/barchart.component';
 import { CommonModule } from '@angular/common';
 import { ContractCreateComponent } from './feature/contract-create/contract-create.component';
 import { ContractInputValidationErrorComponent } from './feature/contract-validation/contract-input-validation-error.component';
@@ -7,6 +8,7 @@ import { ContractStatisticComponent } from './feature/contract-statistic/contrac
 import { FITNESSCENTER_MS_ROUTES } from './fitnesscenter-routes.module';
 import { FitnessEquipmentEditComponent } from './feature/fitness-equipment-edit/fitness-equipment-edit.component';
 import { FitnessEquipmentSearchComponent } from './feature/fitness-equipment-search/fitness-equipment-search.component';
+import { NgChartsModule } from 'ng2-charts';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
@@ -19,12 +21,14 @@ import { SharedModule } from '../shared/shared.module';
     ContractInputValidationErrorComponent,
     ContractNameValidatorDirective,
     ContractStatisticComponent,
-    ContractOutdatedCardComponent
+    ContractOutdatedCardComponent,
+    BarchartComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(FITNESSCENTER_MS_ROUTES)
+    RouterModule.forChild(FITNESSCENTER_MS_ROUTES),
+    NgChartsModule
   ]
 })
 export class FitnesscenterMsModule { }

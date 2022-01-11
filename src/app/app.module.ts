@@ -18,7 +18,7 @@ import { SidebarComponent } from './core/ui/sidebar/sidebar.component';
     SidebarComponent,
     NavbarComponent,
     HomeComponent,
-    ContractSearchComponent
+    ContractSearchComponent,
   ],
   imports: [
     BrowserModule,

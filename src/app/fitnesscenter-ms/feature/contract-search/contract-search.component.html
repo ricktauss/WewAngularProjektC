@@ -1,7 +1,9 @@
 <div><a routerLink="/contract-creation">
-    <button class="btn btn-default">-&gt; Create New Contract</button>
-    <br><br>
-  </a></div>
+    <button class="btn btn-default">-&gt; Create New Contract</button></a>
+  <a routerLink="/contract-statistic">
+    <button class="btn btn-default">-&gt; Contract Statistic</button></a>
+  <br><br>
+</div>
 
 <div class="card">
   <div class="header">
@@ -57,7 +59,7 @@
   </table>
 </div>
 
-<fitness-test-component></fitness-test-component>
+
 
 <div class="card" *ngIf="selectedContract">
   <div class="content">
