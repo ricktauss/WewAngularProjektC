@@ -10,7 +10,6 @@ import { FITNESSCENTER_MS_ROUTES } from './fitnesscenter-ms-routing.module';
 import { FitnessEquipmentAddComponent } from './feature/fitness-equipment-add/fitness-equipment-add.component';
 import { FitnessEquipmentEditComponent } from './feature/fitness-equipment-edit/fitness-equipment-edit.component';
 import { FitnessEquipmentSearchComponent } from './feature/fitness-equipment-search/fitness-equipment-search.component';
-import { MynewHtmlTestComponent } from './feature/mynew-html-test/mynew-html-test.component';
 import { NgChartsModule } from 'ng2-charts';
 import { NgModule } from '@angular/core';
 import { NgxPrintModule } from 'ngx-print';
@@ -34,7 +33,6 @@ import { SharedModule } from '../shared/shared.module';
     ContractStatisticComponent,
     ContractOutdatedCardComponent,
     BarchartComponent,
-    MynewHtmlTestComponent,
     FitnessEquipmentEditComponent,
     MemberSearchComponent,
     MemberCreateEditComponent,
