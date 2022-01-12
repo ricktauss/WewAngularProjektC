@@ -13,7 +13,7 @@
       "id": 2,
       "memberID": 0,
       "firstname": "Lukas",
-      "lastname": "Hödl",
+      "lastname": "H�dl",
       "address": "Obergnas 9a",
       "birthdate": "1995-01-11T00:00:00.000Z",
       "email": "lchoedl@gmail.com"
@@ -81,7 +81,7 @@
       "lastName": "Statham",
       "startTime": "2019-06-10",
       "membershipDuration": "48",
-      "membershipFee": "35.90"
+      "membershipFee": "40"
     },
     {
       "id": 8,
@@ -108,7 +108,7 @@
       "lastName": "Skinner",
       "startTime": "2016-06-03",
       "membershipDuration": "12",
-      "membershipFee": "12.10"
+      "membershipFee": "12.50"
     },
     {
       "id": 11,

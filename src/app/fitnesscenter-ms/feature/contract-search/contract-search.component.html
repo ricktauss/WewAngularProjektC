@@ -1,3 +1,4 @@
+<!-- Additional contract navigation -->
 <div>
   <a routerLink="/contract-creation">
     <button class="btn btn-default">-&gt; Create New Contract</button></a>
@@ -6,6 +7,7 @@
   <br /><br />
 </div>
 
+<!-- Search form -->
 <div class="card">
   <div class="header">
     <h2 class="title">Contract Search</h2>
@@ -29,12 +31,16 @@
         <button class="btn btn-default" (click)="getOutdatedContracts()">
           Show outdated
         </button>
+        <p>
+          {{ message }}
+        </p>
       </div>
     </form>
   </div>
 </div>
 
-<div class="card">
+<!-- Search result contracts -->
+<div class="card" *ngIf="outdatedView === false">
   <table class="table table-condensed" *ngIf="contracts.length > 0">
     <thead>
       <tr>
@@ -63,12 +69,7 @@
   </table>
 </div>
 
-<div class="card" *ngIf="selectedContract">
-  <div class="content">
-    <pre>{{ selectedContract | json }}</pre>
-  </div>
-</div>
-
+<!-- Edit contract form-->
 <div class="card" *ngIf="selectedContract">
   <div class="header">
     <h2 class="title">Contract Edit</h2>
@@ -120,4 +121,11 @@
     </form>
   </div>
 </div>
-<card-contract-outdated></card-contract-outdated>
+
+<!-- View outdated contracts-->
+<div class="row" *ngIf="outdatedView === true">
+  <div *ngFor="let c of contracts" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <contract-outdated-card [item]="c" [selected]="this.selectedContract!" (selectedChange)="select($event)">
+    </contract-outdated-card>
+  </div>
+</div>
