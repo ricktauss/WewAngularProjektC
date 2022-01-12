@@ -20,6 +20,7 @@ import { MemberCreateComponent } from './feature/member-create/member-create.com
 
 
 import { SharedModule } from '../shared/shared.module';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
     RouterModule.forChild(FITNESSCENTER_MS_ROUTES),
     NgxPrintModule,
-    NgChartsModule
+    NgChartsModule,
+    ReactiveFormsModule
   ]
 })
 export class FitnesscenterMsModule {}

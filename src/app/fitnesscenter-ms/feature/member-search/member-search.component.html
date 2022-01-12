@@ -42,7 +42,7 @@
     <td>{{member.lastname}}</td>
     <td>{{member.email}}</td>
     <td>{{member.address}}</td>
-    <td>{{member.birthdate | date: 'yyyy-MM-dd' }}</td>
+    <td>{{member.birthdate  | date: "dd.MM.yyyy" }}</td>
     <td>
       <button routerLink="/member-create-edit/{{member.id}}" class="btn btn-primary">Edit</button>
       <button (click)="delete(member)" class="btn btn-primary">Delete</button>
