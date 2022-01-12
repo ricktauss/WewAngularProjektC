@@ -71,6 +71,15 @@
       "address": "St.Anna 30",
       "birthdate": "2022-01-24",
       "email": "reini@gmail.com"
+    },
+    {
+      "id": 9,
+      "memberID": 0,
+      "firstname": "Otto",
+      "lastname": "Walkes",
+      "address": "Gnas 120",
+      "birthdate": "1996-12-29",
+      "email": "lchoedl@gmail.com"
     }
   ],
   "contracts": [

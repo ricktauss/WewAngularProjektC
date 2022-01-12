@@ -16,7 +16,7 @@
 
   <div class="mb-3 col-md-6">
     <label class="form-label">Id:</label>
-    <input formControlName="id" type="number" class="form-control" >
+    <input formControlName="id" type="text" class="form-control" >
     <label *ngIf="createMemberForm.get('id')?.hasError('required') && createMemberForm.get('id')?.touched"
            class="text-danger">*Dieses Feld ist ein Pflichtfeld</label>
     <label *ngIf="createMemberForm.get('id')?.hasError('pattern') && createMemberForm.get('id')?.touched"
@@ -39,6 +39,8 @@
     <input formControlName="address" type="text" class="form-control" >
     <label *ngIf="createMemberForm.get('address')?.hasError('required') && createMemberForm.get('address')?.touched"
            class="text-danger">*Dieses Feld ist ein Pflichtfeld</label>
+    <label *ngIf="createMemberForm.get('address')?.hasError('minlength') && createMemberForm.get('address')?.touched"
+           class="text-danger">*Die Adresse muss mindestens 6 Zeichen haben</label>
   </div>
 
   <div class="mb-3 col-md-6">

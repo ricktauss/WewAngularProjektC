@@ -16,11 +16,11 @@ export class MemberCreateComponent implements OnInit {
 
   createMemberForm = this.formBuilder.group(
     {
-      id: [0,Validators.compose([Validators.required,Validators.pattern("^[0-9]*$")])],
+      id: [0,Validators.compose([Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/)])],
       firstname: ['',Validators.required],
       lastname: ['',Validators.required],
-      address: ['',Validators.required],
-      birthdate: ['',new AdultValidatorDirective().validate],
+      address: ['',Validators.compose([Validators.required,Validators.minLength(6)])],
+      birthdate: ['',[Validators.required,new AdultValidatorDirective().validate]],
       email: ['',Validators.compose([Validators.required,Validators.email])]
     }
   );
