@@ -14,7 +14,7 @@ export class EquipmentNameDirective implements Validator{
   constructor() { }
   validate(control: AbstractControl): ValidationErrors | null {
     const validCategories: string[] = ['treadmill','ergometer','cross trainer','dumbbells','rowing machine','pull-up bar','weight station','sling trainer','Other'];
-    
+
     if (control.value && validCategories.indexOf(control.value) === -1){
       return {
         categories: {
@@ -22,9 +22,9 @@ export class EquipmentNameDirective implements Validator{
           actualCategory: control.value
         }
       };
-       
+
     }
-  
+
     return null;
   }
 

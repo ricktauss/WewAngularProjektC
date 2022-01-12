@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {initialMember, Member} from "../../entities/member";
 import {ActivatedRoute, Router} from "@angular/router";
 import {MemberService} from "../../data-access/member.service";
+import {FormBuilder,Validators} from "@angular/forms";
+import {AdultValidatorDirective} from "../../../shared/validation/adult-validator.directive";
 
 
 @Component({
@@ -11,7 +13,22 @@ import {MemberService} from "../../data-access/member.service";
 })
 export class MemberCreateComponent implements OnInit {
   member: Member = initialMember;
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private memberService: MemberService) {
+
+  createMemberForm = this.formBuilder.group(
+    {
+      id: [0,Validators.compose([Validators.required,Validators.pattern("^[0-9]*$")])],
+      firstname: ['',Validators.required],
+      lastname: ['',Validators.required],
+      address: ['',Validators.required],
+      birthdate: ['',new AdultValidatorDirective().validate],
+      email: ['',Validators.compose([Validators.required,Validators.email])]
+    }
+  );
+
+
+
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private memberService: MemberService, private formBuilder: FormBuilder) {
   this.member = Object.assign({},initialMember);
   }
 
@@ -19,6 +36,13 @@ export class MemberCreateComponent implements OnInit {
   }
 
   create(): void{
+    this.member.id = this.createMemberForm.get('id')?.value;
+    this.member.firstname = this.createMemberForm.get('firstname')?.value;
+    this.member.lastname = this.createMemberForm.get('lastname')?.value;
+    this.member.address = this.createMemberForm.get('address')?.value;
+    this.member.email = this.createMemberForm.get('email')?.value;
+    this.member.birthdate = this.createMemberForm.get('birthdate')?.value;
+
     this.memberService.create(this.member).subscribe({
 
       error: (errResp) => {

@@ -1,42 +1,66 @@
-<div class="row">
-  <div class="col-md-6">
+<form [formGroup]="createMemberForm" (ngSubmit)="create()">
+  <div class="row">
+    <div class="col-md-6">
 
-    <h3 style="margin-left: 12px"
-    >Neues Mitglied erstellen</h3>
+      <h3 style="margin-left: 12px"
+      >Neues Mitglied erstellen</h3>
+    </div>
+
+    <div class="col-md-6">
+      <button routerLink="/member-search" style="margin-top: 24px; margin-left: 220px" class="btn btn-primary right">
+        Mitglieder Suche
+      </button>
+    </div>
   </div>
 
-  <div class="col-md-6">
-    <button  routerLink="/member-search" style="margin-top: 24px; margin-left: 220px"  class="btn btn-primary right">Mitglieder Suche</button >
-  </div>
-</div>
 
-<form>
   <div class="mb-3 col-md-6">
-    <label  class="form-label">Id:</label>
-    <input disabled="disabled" [(ngModel)]="member.id" type="text" name="id"class="form-control"  aria-describedby="emailHelp">
+    <label class="form-label">Id:</label>
+    <input formControlName="id" type="number" class="form-control" >
+    <label *ngIf="createMemberForm.get('id')?.hasError('required') && createMemberForm.get('id')?.touched"
+           class="text-danger">*Dieses Feld ist ein Pflichtfeld</label>
+    <label *ngIf="createMemberForm.get('id')?.hasError('pattern') && createMemberForm.get('id')?.touched"
+           class="text-danger">*Die Id darf nur aus Zahlen bestehen </label>
   </div>
   <div class="mb-3 col-md-6">
-    <label  class="form-label">Vorname:</label>
-    <input [(ngModel)]="member.firstname" type="text" name="firstname" class="form-control"  aria-describedby="emailHelp">
+    <label class="form-label">Vorname:</label>
+    <input formControlName="firstname" type="text" class="form-control" >
+    <label *ngIf="createMemberForm.get('firstname')?.hasError('required') && createMemberForm.get('firstname')?.touched"
+           class="text-danger">*Dieses Feld ist ein Pflichtfeld</label>
   </div>
   <div class="mb-3 col-md-6">
     <label class="form-label">Nachname:</label>
-    <input [(ngModel)]="member.lastname" type="text" name="lastname" class="form-control" >
+    <input formControlName="lastname" type="text" class="form-control">
+    <label *ngIf="createMemberForm.get('lastname')?.hasError('required') && createMemberForm.get('lastname')?.touched"
+           class="text-danger">*Dieses Feld ist ein Pflichtfeld</label>
   </div>
   <div class="mb-3 col-md-6">
     <label class="form-label">Addresse: </label>
-    <input [(ngModel)]="member.address" type="text" name="address" class="form-control" aria-describedby="emailHelp">
+    <input formControlName="address" type="text" class="form-control" >
+    <label *ngIf="createMemberForm.get('address')?.hasError('required') && createMemberForm.get('address')?.touched"
+           class="text-danger">*Dieses Feld ist ein Pflichtfeld</label>
   </div>
 
   <div class="mb-3 col-md-6">
-    <label  class="form-label">E-Mail</label>
-    <input [(ngModel)]="member.email" type="text" name="email" class="form-control" >
+    <label class="form-label">E-Mail</label>
+    <input formControlName="email" type="email" class="form-control">
+    <label *ngIf="createMemberForm.get('email')?.hasError('required') && createMemberForm.get('email')?.touched"
+           class="text-danger">*Dieses Feld ist ein Pflichtfeld</label>
+    <label *ngIf="createMemberForm.get('email')?.hasError('email') && createMemberForm.get('email')?.touched"
+           class="text-warning">*Bitte eine gültige Email Adresse eingeben</label>
   </div>
   <div class="mb-3 col-md-6">
-    <label  class="form-label">Geburtsdatum:</label>
-    <input type="date"  [value] = "member.birthdate | date: 'yyyy-MM-dd'"  (input) = "dateChanged($event)" class="form-control" >
+    <label class="form-label">Geburtsdatum:</label>
+    <input type="date" formControlName="birthdate" [value]="member.birthdate | date: 'yyyy-MM-dd'"
+           (input)="dateChanged($event)" class="form-control">
+    <label *ngIf="createMemberForm.get('birthdate')?.hasError('required') && createMemberForm.get('birthdate')?.touched"
+           class="text-danger">*Dieses Feld ist ein Pflichtfeld</label>
+    <label *ngIf="createMemberForm.get('birthdate')?.hasError('birthdate') && createMemberForm.get('birthdate')?.touched"
+           class="text-danger">*Sie müssen über 18 Jahre alt sein</label>
   </div>
   <button
-    (click)="create()" style="margin-left: 12px; margin-top: 12px" type="submit" class="btn btn-primary">Speichern</button>
+    [disabled]="createMemberForm.invalid" style="margin-left: 12px; margin-top: 12px" type="submit"
+    class="btn btn-primary">Speichern
+  </button>
 
 </form>

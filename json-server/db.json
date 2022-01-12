@@ -60,8 +60,17 @@
       "firstname": "Lukas",
       "lastname": "Hödl",
       "address": "Gnas 18",
-      "birthdate": "1955-01-01T00:00:00.000Z",
+      "birthdate": "1953-01-01T00:00:00.000Z",
       "email": "lchoedl@gmail.com"
+    },
+    {
+      "id": 8,
+      "memberID": 0,
+      "firstname": "Reinhard",
+      "lastname": "Hartmann",
+      "address": "St.Anna 30",
+      "birthdate": "2022-01-24",
+      "email": "reini@gmail.com"
     }
   ],
   "contracts": [
