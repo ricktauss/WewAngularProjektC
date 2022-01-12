@@ -11,7 +11,7 @@ export class ContractOutdatedCardComponent implements OnInit, OnDestroy {
   @Input() item: Contract | undefined;
   @Input() selected: Contract | undefined;
   @Output() selectedChange = new EventEmitter<Contract>();
-  
+
 
   ngOnInit(): void {
     console.log('ContractOutdatedCard INIT');
@@ -21,8 +21,12 @@ export class ContractOutdatedCardComponent implements OnInit, OnDestroy {
     console.log('ContractOutdatedCard DESTROY');
   }
 
-  toggleSelection():void {
-    this.selectedChange.emit(this.item);
+  toggleSelection(): void {
+    if (this.item?.id === this.selected?.id) {
+      this.selectedChange.emit(undefined);
+    } else {
+      this.selectedChange.emit(this.item);
+    }
   }
 
 }

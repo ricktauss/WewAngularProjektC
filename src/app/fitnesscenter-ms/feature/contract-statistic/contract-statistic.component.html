@@ -6,6 +6,9 @@
 </div>
 
 <h4>Total monthly revenue: {{ sumMonthFees | currencyFormatter: "EUR":1 }}</h4>
+<h4>Total number of contracts ever signed: {{this.contracts!.length}}</h4>
 
-<fitness-barchart *ngIf="outdatedContracts > 0 || validContracts > 0" [outdatedContracts]="outdatedContracts" [validContracts]="validContracts">
+<fitness-barchart *ngIf="outdatedContracts!.length > 0 || validContracts!.length > 0"
+  [outdatedContracts]="outdatedContracts!.length" [validContracts]="validContracts!.length"
+  [events]="eventRefreshSubject.asObservable()">
 </fitness-barchart>

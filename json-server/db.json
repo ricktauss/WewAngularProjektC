@@ -110,12 +110,12 @@
     },
     {
       "id": 13,
-      "contractId": "15",
-      "firstName": "Pat",
-      "lastName": "Prett",
+      "contractId": "50",
+      "firstName": "Testb",
+      "lastName": "Testb",
       "startTime": "2022-01-03",
-      "membershipDuration": "14",
-      "membershipFee": "12.10"
+      "membershipDuration": "2",
+      "membershipFee": "11"
     }
   ],
   "fitnessEquipment": [

@@ -1,18 +1,29 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'fitness-barchart',
   templateUrl: './barchart.component.html',
   styleUrls: ['./barchart.component.css']
 })
-export class BarchartComponent implements OnInit {
+export class BarchartComponent implements OnInit, OnDestroy {
   @Input() outdatedContracts: number | null = null;
   @Input() validContracts: number | null = null;
+  @Input() events: Observable<void> | null = null;
+  @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
+  eventsSubscription: Subscription | null = null;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.refresh();
+    this.eventsSubscription = this.events!.subscribe(() => this.refresh());
+  }
 
+  ngOnDestroy() {
+    this.eventsSubscription!.unsubscribe();
   }
 
 
@@ -28,14 +39,26 @@ export class BarchartComponent implements OnInit {
   chartData = [
     {
       label: 'outdated',
-      //data: [this.outdatedContracts]
       data: [this.outdatedContracts]
     },
     {
       label: 'valid',
-      //data: [this.validContracts]
       data: [this.validContracts]
     }
   ];
+
+  refresh(): void {
+    this.chartData = [
+      {
+        label: 'outdated',
+        data: [this.outdatedContracts]
+      },
+      {
+        label: 'valid',
+        data: [this.validContracts]
+      }
+    ];
+    this.chart?.chart?.update();
+  }
 
 }

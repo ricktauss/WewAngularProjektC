@@ -60,21 +60,23 @@ export class ContractService {
     return this.http.get<Contract[]>(baseURL, { headers });
   }
 
-  checkValidState(contracts: Contract[]): Contract {
+  checkValidState(contracts: Contract[]): Object {
+    let returnObject = JSON.parse('{"outdated":[],"valid":[]}');
 
     contracts.forEach((c) => {
-
       const startDate = new Date(c.startTime); //convert time from string to date
       const endDate = startDate;
       endDate.setMonth(endDate.getMonth() + Number(c.membershipDuration)); //calculate end date with months
 
       if (endDate.getTime() > Date.now()) {
+        returnObject.valid.push(c);
         console.log(`Contract from ${c.firstName} valid`);
       } else {
+        returnObject.outdated.push(c);
         console.log(`Contract from ${c.firstName} not valid`);
       }
     });
 
-    return contracts[0];
+    return returnObject;
   }
 }
