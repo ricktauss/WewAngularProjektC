@@ -56,10 +56,6 @@ export class MemberCreateComponent implements OnInit {
 
   }
 
-  dateChanged(event: Event) {
-    var val = (event.target as HTMLInputElement).value;
-    this.member.birthdate = new Date(val);
-  }
 
 
 }

@@ -53,8 +53,7 @@
   </div>
   <div class="mb-3 col-md-6">
     <label class="form-label">Geburtsdatum:</label>
-    <input type="date" formControlName="birthdate" [value]="member.birthdate | date: 'yyyy-MM-dd'"
-           (input)="dateChanged($event)" class="form-control">
+    <input type="date" formControlName="birthdate" class="form-control" >
     <label *ngIf="createMemberForm.get('birthdate')?.hasError('required') && createMemberForm.get('birthdate')?.touched"
            class="text-danger">*Dieses Feld ist ein Pflichtfeld</label>
     <label *ngIf="createMemberForm.get('birthdate')?.hasError('birthdate') && createMemberForm.get('birthdate')?.touched"
