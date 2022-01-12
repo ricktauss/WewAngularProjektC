@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FitnessEquipment, numberOnly } from '../../entities/fitnessEquipment';
 
 @Component({
-  selector: 'flight-fitness-equipment-edit',
+  selector: 'fitness-equipment-edit',
   templateUrl: './fitness-equipment-edit.component.html',
   styleUrls: ['./fitness-equipment-edit.component.css']
 })

@@ -80,13 +80,13 @@
 
 <div class="card" *ngIf="selectedEquipment">
   <div class="content">
-    <flight-fitness-equipment-edit
+    <fitness-equipment-edit
       [item]="selectedEquipment"
       [response]="response"
       (fitnessEquipment)="updateSelection($event)"
       (equipmentID)="deleteSelection($event)"
     >
       >
-    </flight-fitness-equipment-edit>
+    </fitness-equipment-edit>
   </div>
 </div>
