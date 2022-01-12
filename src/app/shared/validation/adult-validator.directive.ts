@@ -29,7 +29,6 @@ export class AdultValidatorDirective  implements Validator{
     }
     return null;
 
-
   }
 
 }

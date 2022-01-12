@@ -9,6 +9,6 @@ import { AdultValidatorDirective } from './validation/adult-validator.directive'
 @NgModule({
   declarations: [CurrencyFormatterPipe, EquipmentNameDirective, AdultValidatorDirective],
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
-  exports: [FormsModule, EquipmentNameDirective, CurrencyFormatterPipe]
+  exports: [FormsModule, EquipmentNameDirective, CurrencyFormatterPipe, AdultValidatorDirective]
 })
 export class SharedModule { }
