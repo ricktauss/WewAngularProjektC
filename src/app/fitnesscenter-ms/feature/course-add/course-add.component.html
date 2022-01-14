@@ -1,0 +1,66 @@
+<div>
+  <div>
+    <h5>Neuen Kurs anlegen</h5>
+  </div>
+  <div class="body">
+    <form>
+      <div class="row mb-2">
+        <div class="col">
+          <!--Id-->
+          <label class="form-label">Id</label>
+          <input type="number" [(ngModel)]="course.id" name="Id" class="form-control"/>
+        </div>
+        <div class="col">
+          <!--Roomnumber-->
+          <label class="form-label">Kursleiter</label>
+          <input type="text" [(ngModel)]="course.instructor" name="Roomnumber" class="form-control"/>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-6">
+          <!--Name-->
+          <label class="form-label">Kursname</label>
+          <input type="text" [(ngModel)]="course.name" name="Name" class="form-control"/>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col">
+          <!--StartDate-->
+          <label class="form-label">Startdatum</label>
+          <!--<input type="date" [value]="course.startdate | date: 'yyyy-MM-dd'" class="form-control"/>-->
+          <input type="date" [value]="course.startdate | date: 'yyyy-MM-dd'" (input)="dateChanged($event, true)" class="form-control"/>
+        </div>
+        <div class="col">
+          <!--EndDate-->
+          <label class="form-label">Enddatum</label>
+          <!--<input type="date" [value]="course.enddate | date: 'yyyy-MM-dd'"  class="form-control"/>-->
+          <input type="date" [value]="course.enddate | date: 'yyyy-MM-dd'" (input)="dateChanged($event, false)"  class="form-control"/>
+        </div>
+        <div class="col">
+          <!--StartDate-->
+          <label class="form-label">Startzeit</label>
+          <!--<input type="date" [value]="course.startdate | date: 'yyyy-MM-dd'" class="form-control"/>-->
+          <input type="time" class="form-control"/>
+        </div>
+        <div class="col">
+          <!--StartDate-->
+          <label class="form-label">Endzeit</label>
+          <!--<input type="date" [value]="course.startdate | date: 'yyyy-MM-dd'" class="form-control"/>-->
+          <input type="time" class="form-control"/>
+        </div>
+        <div class="col">
+          <!--StartDate-->
+          <label class="form-label">Zusatzinformation</label>
+          <!--<input type="date" [value]="course.startdate | date: 'yyyy-MM-dd'" class="form-control"/>-->
+          <input type="text" class="form-control"/>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="footer">
+    <button (click)="save()" class="btn btn-default">Submit</button>
+  </div>
+
+</div>
+
+

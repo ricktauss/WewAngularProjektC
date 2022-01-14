@@ -1,4 +1,61 @@
 {
+  "courses": [
+    {
+      "id": 1,
+      "courseID": 1,
+      "instructor": "Sepp",
+      "name": "Crossfit",
+      "starttime": "18:00",
+      "endtime": "20:00",
+      "startdate": "2022-02-02",
+      "enddate": "2023-01-31",
+      "additionalinfo": "Kurs findet Montag, Mittwoch und Freitag statt."
+    },
+    {
+      "id": 2,
+      "courseID": 2,
+      "instructor": "Hias",
+      "name": "Pumpen mit Hias",
+      "starttime": "18:00",
+      "endtime": "20:00",
+      "startdate": "2022-02-01",
+      "enddate": "2023-02-01",
+      "additionalinfo": "Kurs findet Dienstag, Donnerstag und Samstag statt."
+    },
+    {
+      "id": 3,
+      "courseID": 3,
+      "instructor": "Christian",
+      "name": "Corestability",
+      "starttime": "10:00",
+      "endtime": "11:00",
+      "startdate": "2022-02-01",
+      "enddate": "2023-02-01",
+      "additionalinfo": "Kurs findet Montag - Freitag statt."
+    },
+    {
+      "id": 4,
+      "courseID": 4,
+      "instructor": "Armin",
+      "name": "Core",
+      "starttime": "00:00",
+      "endtime": "00:00",
+      "startdate": "2000-01-01T00:00:00.000Z",
+      "enddate": "2000-01-01T00:00:00.000Z",
+      "additionalinfo": "Kursinfo anfügen"
+    },
+    {
+      "id": 5,
+      "courseID": 5,
+      "instructor": "Gerald",
+      "name": "Yoga",
+      "starttime": "17:00",
+      "endtime": "18:00",
+      "startdate": "2022-02-01T00:00:00.000Z",
+      "enddate": "2022-02-01T00:00:00.000Z",
+      "additionalinfo": "Test"
+    }
+  ],
   "members": [
     {
       "id": 1,
@@ -289,7 +346,7 @@
     },
     {
       "equipmentId": 111,
-      "equipmentName": "erhometer",
+      "equipmentName": "ergometer",
       "equipmentCategory": "treadmill",
       "dateBought": "2022-01-13",
       "price": "100",
