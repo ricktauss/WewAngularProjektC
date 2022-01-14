@@ -251,82 +251,12 @@
   ],
   "fitnessEquipment": [
     {
-      "equipmentId": "sfasdf",
-      "dateBought": "19.12.2021",
-      "equipmentName": "Hanteln",
-      "price": 0,
-      "id": 2
-    },
-    {
-      "equipmentId": 0,
-      "dateBought": "19.12.2021",
-      "equipmentName": "asdfsdaf",
-      "price": "asdf",
-      "id": 4
-    },
-    {
-      "equipmentId": 0,
-      "equipmentName": "Laufband e.g.",
-      "dateBought": "1993-01-08",
-      "price": "950",
-      "id": 10
-    },
-    {
-      "equipmentId": 0,
-      "equipmentName": "Laufband e.g.",
-      "dateBought": "2022-01-19",
-      "price": "700",
-      "id": 12
-    },
-    {
-      "equipmentName": "",
-      "dateBought": "2022.01.01",
-      "id": 17
-    },
-    {
-      "equipmentName": "",
-      "dateBought": "2022.01.01",
-      "id": 18
-    },
-    {
-      "equipmentName": "",
-      "dateBought": "2022.01.01",
-      "id": 19
-    },
-    {
-      "equipmentName": "",
-      "dateBought": "2022.01.01",
-      "id": 20
-    },
-    {
-      "equipmentName": "",
-      "dateBought": "2022.01.01",
-      "id": 21
-    },
-    {
-      "equipmentName": "",
-      "dateBought": "2022.01.01",
-      "id": 22
-    },
-    {
-      "equipmentName": "",
-      "dateBought": "2022.01.01",
-      "id": 23
-    },
-    {
-      "equipmentId": "1215",
-      "equipmentName": "ergometer",
-      "dateBought": "2022.01.01",
-      "price": "500",
-      "id": 24
-    },
-    {
       "equipmentId": 333,
       "equipmentName": "ergometer",
       "equipmentCategory": "treadmill",
       "dateBought": "2022.01.01",
       "price": "7",
-      "id": 25
+      "id": 1
     },
     {
       "equipmentId": 55,
@@ -334,7 +264,7 @@
       "equipmentCategory": "weight station",
       "dateBought": "2022.01.01",
       "price": "50",
-      "id": 27
+      "id": 2
     },
     {
       "equipmentId": 45165,
@@ -342,7 +272,7 @@
       "equipmentCategory": "treadmill",
       "dateBought": "2022.01.01",
       "price": "120.5",
-      "id": 28
+      "id": 3
     },
     {
       "equipmentId": 111,
@@ -350,7 +280,55 @@
       "equipmentCategory": "treadmill",
       "dateBought": "2022-01-13",
       "price": "100",
-      "id": 28
+      "id": 4
+    },
+    {
+      "equipmentId": 3154,
+      "equipmentName": "treadmill ZX34",
+      "equipmentCategory": "treadmill",
+      "dateBought": "2021-11-18",
+      "price": "2000",
+      "id": 5
+    },
+    {
+      "equipmentId": 154564,
+      "equipmentName": "treadmill superior",
+      "equipmentCategory": "treadmill",
+      "dateBought": "2021-10-05",
+      "price": "2500",
+      "id": 6
+    },
+    {
+      "equipmentId": 165465,
+      "equipmentName": "treadmill superior 34",
+      "equipmentCategory": "treadmill",
+      "dateBought": "2020-05-12",
+      "price": "2354",
+      "id": 7
+    },
+    {
+      "equipmentId": 26545,
+      "equipmentName": "sling trainer 3000",
+      "equipmentCategory": "sling trainer",
+      "dateBought": "2021-06-15",
+      "price": "210",
+      "id": 8
+    },
+    {
+      "equipmentId": 65454,
+      "equipmentName": "slingstation43",
+      "equipmentCategory": "sling trainer",
+      "dateBought": "2021-08-12",
+      "price": "650",
+      "id": 9
+    },
+    {
+      "equipmentId": 565646,
+      "equipmentName": "weight station slim fit",
+      "equipmentCategory": "weight station",
+      "dateBought": "2022.01.01",
+      "price": "420",
+      "id": 10
     }
   ]
 }
