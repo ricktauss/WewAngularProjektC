@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-3">
+    <h3>Kurs anlegen</h3>
+    <button routerLink="/course-add" type="submit" class="btn btn-default right">Kurs anlegen</button>
+  </div>
+
+  <div class="col-md-3">
+    <h3>Kurs importieren</h3>
+    <button routerLink="/course-upload" type="submit" class="btn btn-default right">Kurs importieren</button>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>Kurs suchen</h3>
+  </div>
+</div>
+<form>
+  <div class="mb-3">
+    <label  class="form-label">Kursname</label>
+    <input placeholder="Kursnamen eingeben" type="text" class="form-control" [(ngModel)]="name" name="name">
+  </div>
+  <button (click)="search()" style="margin-top: 10px" type="submit" class="btn btn-default right">Suchen</button>
+</form>
+
+<table class="table" >
+  <thead>
+  <tr>
+    <th scope="col">Nr.</th>
+    <th scope="col">Instruktor</th>
+    <th scope="col">Kursname</th>
+    <th scope="col">Startzeit</th>
+    <th scope="col">Endzeit</th>
+    <th scope="col">Startdatum</th>
+    <th scope="col">Enddatum</th>
+    <th scope="col">Kursinfo</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let course of courses">
+  <tr>
+    <th scope="row">{{course.id}}</th>
+    <td>{{course.instructor}}</td>
+    <td>{{course.name}}</td>
+    <td>{{course.starttime}}</td>
+    <td>{{course.endtime}}</td>
+    <td>{{course.startdate  | date: "dd.MM.yyyy" }}</td>
+    <td>{{course.enddate  | date: "dd.MM.yyyy" }}</td>
+    <td>{{course.additionalinfo}}</td>
+    <td>
+      <button (click)="select(course)" class="btn btn-default">Edit</button>
+      <button (click)="delete(course)" style="margin-left: 10px" class="btn btn-default">Delete</button>
+      <!--<button (click)="delete(member)" class="btn btn-primary">Delete</button>-->
+    </td>
+  </tr>
+
+  </tbody>
+  <h3 class="text-center" *ngIf="courses.length == 0">
+    Kein Kurs vorhanden gefunden.
+  </h3>
+</table>
+
+<div *ngIf="selectedCourse">
+    <fitness-course-edit [item]="selectedCourse"
+                 (newCourse)="update($event)">
+    </fitness-course-edit>
+</div>
+

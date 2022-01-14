@@ -16,6 +16,5 @@ export const initialMember: Member = {
   address: '',
   birthdate: new Date("2000-01-01"),
   email: ''
-
 };
 

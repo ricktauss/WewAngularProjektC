@@ -1,0 +1,62 @@
+
+<div>
+  <div>
+    <h5>Kurs editieren</h5>
+  </div>
+  <div class="body">
+    <form>
+      <div class="row mb-2">
+        <div class="col">
+          <!--Id-->
+          <label class="form-label">Id</label>
+          <input [disabled]="true" [(ngModel)]="course!.id" type="number" name="Id" class="form-control"/>
+        </div>
+        <div class="col">
+          <!--Instructor-->
+          <label class="form-label">Kursleiter</label>
+          <input [(ngModel)]="course!.instructor" type="text" name="instructor" class="form-control"/>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-6">
+          <!--Name-->
+          <label class="form-label">Kursname</label>
+          <input [(ngModel)]="course!.name" type="text" name="Name" class="form-control"/>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col">
+          <!--StartDate-->
+          <label class="form-label">Startdatum</label>
+          <!--<input type="date" [value]="course.startdate | date: 'yyyy-MM-dd'" class="form-control"/>-->
+          <input [(ngModel)]="course!.startdate" type="date" name="startdate" class="form-control"/>
+        </div>
+        <div class="col">
+          <!--EndDate-->
+          <label class="form-label">Enddatum</label>
+          <!--<input type="date" [value]="course.enddate | date: 'yyyy-MM-dd'"  class="form-control"/>-->
+          <input [(ngModel)]="course!.enddate" type="date" name="enddate" class="form-control"/>
+        </div>
+        <div class="col">
+          <!--Startime-->
+          <label class="form-label">Startzeit</label>
+          <input [(ngModel)]="course!.starttime" type="time" name="starttime" class="form-control"/>
+        </div>
+        <div class="col">
+          <!--EndTime-->
+          <label class="form-label">Endzeit</label>
+          <input [(ngModel)]="course!.endtime" type="time" name="endtime" class="form-control"/>
+        </div>
+        <div class="col">
+          <!--AdditionalInfo-->
+          <label class="form-label">Zusatzinformation</label>
+          <input [(ngModel)]="course!.additionalinfo" type="text" name="additionalinfo" class="form-control"/>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="footer">
+    <button (click)="update()" class="btn btn-default">Kursdaten ändern</button>
+  </div>
+
+</div>

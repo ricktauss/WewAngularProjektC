@@ -28,17 +28,17 @@
         <label>Equipment Category:</label>
         <input
           [(ngModel)]="equipment!.equipmentCategory"
-          name="equipmentName"
+          name="equipmentCategory"
           class="form-control"
-          EquipmentName
+          equipmentName
         />
       </div>
 
       <div
         class="alert alert-danger"
-        *ngIf="editForm?.controls?.['equipmentName']?.hasError('categories')"
+        *ngIf="editForm?.controls?.['equipmentCategory']?.hasError('categories')"
       >
-        {{ editForm?.controls?.['equipmentName']?.errors?.categories.validCategories}}
+        {{ editForm?.controls?.['equipmentCategory']?.errors?.categories.validCategories}}
       </div>
 
       <div class="form-group">

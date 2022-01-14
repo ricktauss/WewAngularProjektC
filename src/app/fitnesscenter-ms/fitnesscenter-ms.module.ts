@@ -21,6 +21,10 @@ import { MemberCreateComponent } from './feature/member-create/member-create.com
 
 import { SharedModule } from '../shared/shared.module';
 import {ReactiveFormsModule} from "@angular/forms";
+import { CourseSearchComponent } from './feature/course-search/course-search.component';
+import { CourseEditComponent } from './feature/course-edit/course-edit.component';
+import { CourseAddComponent } from './feature/course-add/course-add.component';
+import { CourseUploadComponent } from './feature/course-upload/course-upload.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import {ReactiveFormsModule} from "@angular/forms";
     FitnessEquipmentEditComponent,
     MemberSearchComponent,
     MemberCreateEditComponent,
-    MemberCreateComponent
+    MemberCreateComponent,
+    CourseSearchComponent,
+    CourseEditComponent,
+    CourseAddComponent,
+    CourseUploadComponent
 
   ],
   imports: [
