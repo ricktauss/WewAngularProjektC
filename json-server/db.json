@@ -3,69 +3,36 @@
     {
       "id": 1,
       "courseID": 1,
-      "instructor": "Sepp",
-      "name": "Crossfit",
-      "starttime": "18:00",
-      "endtime": "20:00",
-      "startdate": "2022-02-02",
-      "enddate": "2023-01-31",
-      "additionalinfo": "Kurs findet Montag, Mittwoch und Freitag statt."
+      "instructor": "Herbert",
+      "name": "Corestrength",
+      "starttime": "17:00",
+      "endtime": "18:00",
+      "startdate": "2022-10-15T00:00:00.000Z",
+      "enddate": "2022-01-15T09:02:39.779Z",
+      "additionalinfo": "Montag, Mittwoch, Freitag"
     },
     {
       "id": 2,
-      "courseID": 2,
-      "instructor": "Hias",
-      "name": "Pumpen mit Hias",
+      "instructor": "Instruktor name",
+      "name": "test",
       "starttime": "18:00",
-      "endtime": "20:00",
-      "startdate": "2022-02-01",
-      "enddate": "2023-02-01",
-      "additionalinfo": "Kurs findet Dienstag, Donnerstag und Samstag statt."
-    },
-    {
-      "id": 3,
-      "courseID": 3,
-      "instructor": "Christian",
-      "name": "Corestability",
-      "starttime": "10:00",
-      "endtime": "11:00",
-      "startdate": "2022-02-01",
-      "enddate": "2023-02-01",
-      "additionalinfo": "Kurs findet Montag - Freitag statt."
-    },
-    {
-      "id": 4,
-      "courseID": 4,
-      "instructor": "Armin",
-      "name": "Core",
-      "starttime": "00:00",
-      "endtime": "00:00",
-      "startdate": "2000-01-01T00:00:00.000Z",
-      "enddate": "2000-01-01T00:00:00.000Z",
+      "endtime": "19:00",
+      "startdate": "2022-01-15T09:12:04.184Z",
+      "enddate": "2022-01-15T09:12:04.184Z",
       "additionalinfo": "Kursinfo anfügen"
     },
     {
-      "id": 5,
-      "courseID": 5,
-      "instructor": "Gerald",
-      "name": "Yoga",
+      "id": 3,
+      "name": "Bizeps wie Arnold",
       "starttime": "17:00",
-      "endtime": "18:00",
-      "startdate": "2022-02-01T00:00:00.000Z",
-      "enddate": "2022-02-01T00:00:00.000Z",
-      "additionalinfo": "Test"
+      "endtime": "19:00",
+      "startdate": "2022-01-16",
+      "enddate": "2022-01-30",
+      "additionalinfo": "Dienstag und Donnerstag",
+      "instructor": "Johannes"
     }
   ],
   "members": [
-    {
-      "id": 1,
-      "memberID": 1,
-      "firstname": "Stefan",
-      "lastname": "Spencer",
-      "address": "Obergnas 9a",
-      "birthdate": "2000-01-11",
-      "email": "lukas@gmail.com"
-    },
     {
       "id": 2,
       "memberID": 0,
@@ -128,15 +95,6 @@
       "address": "St.Anna 30",
       "birthdate": "2022-01-24",
       "email": "reini@gmail.com"
-    },
-    {
-      "id": 9,
-      "memberID": 0,
-      "firstname": "Otto",
-      "lastname": "Walkes",
-      "address": "Gnas 120",
-      "birthdate": "1996-12-29",
-      "email": "lchoedl@gmail.com"
     }
   ],
   "contracts": [
@@ -195,15 +153,6 @@
       "membershipFee": "20.10"
     },
     {
-      "id": 7,
-      "contractId": "7",
-      "firstName": "Jason",
-      "lastName": "Statham",
-      "startTime": "2019-06-10",
-      "membershipDuration": "48",
-      "membershipFee": "40"
-    },
-    {
       "id": 8,
       "contractId": "8",
       "firstName": "Homer J.",
@@ -251,12 +200,82 @@
   ],
   "fitnessEquipment": [
     {
+      "equipmentId": "sfasdf",
+      "dateBought": "19.12.2021",
+      "equipmentName": "Hanteln",
+      "price": 0,
+      "id": 2
+    },
+    {
+      "equipmentId": 0,
+      "dateBought": "19.12.2021",
+      "equipmentName": "asdfsdaf",
+      "price": "asdf",
+      "id": 4
+    },
+    {
+      "equipmentId": 0,
+      "equipmentName": "Laufband e.g.",
+      "dateBought": "1993-01-08",
+      "price": "950",
+      "id": 10
+    },
+    {
+      "equipmentId": 0,
+      "equipmentName": "Laufband e.g.",
+      "dateBought": "2022-01-19",
+      "price": "700",
+      "id": 12
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 17
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 18
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 19
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 20
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 21
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 22
+    },
+    {
+      "equipmentName": "",
+      "dateBought": "2022.01.01",
+      "id": 23
+    },
+    {
+      "equipmentId": "1215",
+      "equipmentName": "ergometer",
+      "dateBought": "2022.01.01",
+      "price": "500",
+      "id": 24
+    },
+    {
       "equipmentId": 333,
       "equipmentName": "ergometer",
       "equipmentCategory": "treadmill",
       "dateBought": "2022.01.01",
       "price": "7",
-      "id": 1
+      "id": 25
     },
     {
       "equipmentId": 55,
@@ -264,15 +283,7 @@
       "equipmentCategory": "weight station",
       "dateBought": "2022.01.01",
       "price": "50",
-      "id": 2
-    },
-    {
-      "equipmentId": 45165,
-      "equipmentName": "treadmillXZ2",
-      "equipmentCategory": "treadmill",
-      "dateBought": "2022.01.01",
-      "price": "120.5",
-      "id": 3
+      "id": 27
     },
     {
       "equipmentId": 111,
@@ -280,55 +291,15 @@
       "equipmentCategory": "treadmill",
       "dateBought": "2022-01-13",
       "price": "100",
-      "id": 4
+      "id": 28
     },
     {
-      "equipmentId": 3154,
-      "equipmentName": "treadmill ZX34",
+      "equipmentId": 1321564,
+      "equipmentName": "Laufband2",
       "equipmentCategory": "treadmill",
-      "dateBought": "2021-11-18",
-      "price": "2000",
-      "id": 5
-    },
-    {
-      "equipmentId": 154564,
-      "equipmentName": "treadmill superior",
-      "equipmentCategory": "treadmill",
-      "dateBought": "2021-10-05",
-      "price": "2500",
-      "id": 6
-    },
-    {
-      "equipmentId": 165465,
-      "equipmentName": "treadmill superior 34",
-      "equipmentCategory": "treadmill",
-      "dateBought": "2020-05-12",
-      "price": "2354",
-      "id": 7
-    },
-    {
-      "equipmentId": 26545,
-      "equipmentName": "sling trainer 3000",
-      "equipmentCategory": "sling trainer",
-      "dateBought": "2021-06-15",
-      "price": "210",
-      "id": 8
-    },
-    {
-      "equipmentId": 65454,
-      "equipmentName": "slingstation43",
-      "equipmentCategory": "sling trainer",
-      "dateBought": "2021-08-12",
-      "price": "650",
-      "id": 9
-    },
-    {
-      "equipmentId": 565646,
-      "equipmentName": "weight station slim fit",
-      "equipmentCategory": "weight station",
       "dateBought": "2022.01.01",
-      "price": "420",
-      "id": 10
+      "price": "150",
+      "id": 29
     }
   ]
 }

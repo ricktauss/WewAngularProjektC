@@ -26,6 +26,7 @@ import { CourseEditComponent } from './feature/course-edit/course-edit.component
 import { CourseAddComponent } from './feature/course-add/course-add.component';
 import { CourseUploadComponent } from './feature/course-upload/course-upload.component';
 
+
 @NgModule({
   declarations: [
     FitnessEquipmentSearchComponent,
@@ -54,7 +55,7 @@ import { CourseUploadComponent } from './feature/course-upload/course-upload.com
     RouterModule.forChild(FITNESSCENTER_MS_ROUTES),
     NgxPrintModule,
     NgChartsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class FitnesscenterMsModule {}

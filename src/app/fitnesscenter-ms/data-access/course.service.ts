@@ -18,10 +18,6 @@ export class CourseService {
     return courses;
   }
 
-  getCourseID(id: number): Observable<Course> {
-    return this.httpClient.get<Course>(this.courseURL + "/" + id);
-  }
-
   search(name: string): Observable<Course[]> {
     const headers = new HttpHeaders().set("Accept", "application/json");
     const params = new HttpParams().set("name_like", name);
@@ -33,7 +29,6 @@ export class CourseService {
   delete(course: Course): Observable<Course> {
     let delCourse = this.httpClient.delete<Course>(this.courseURL + "/" + course.id);
     return delCourse;
-
   }
 
   update(course: Course): Observable<Course> {
@@ -43,10 +38,17 @@ export class CourseService {
     return this.httpClient.put<Course>(this.courseURL + "/" + course.id, course, { headers });
   }
 
-  create(member: Course): Observable<Course> {
+  create(course: Course): Observable<Course> {
     const headers = new HttpHeaders()
       .set("Accept", "application/json")
       .set("Content-Type", "application/json");
-    return this.httpClient.post<Course>(this.courseURL, member, { headers });
+    console.log(course.starttime)
+    console.log(course.endtime)
+    console.log(course)
+    return this.httpClient.post<Course>(this.courseURL, course, { headers });
+  }
+
+  getLastID(){
+
   }
 }

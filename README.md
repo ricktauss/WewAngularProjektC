@@ -3,8 +3,10 @@
 
 
 ## Alexander Töscher
- - coming soon
-
+- Entität:   course
+- Features:  course-add/edit/search
+- Shared:    validator -> enddate-validator
+- 
 ## Lukas Hödl
  - Entität:   member
  - Features:  member-create/edit/search

@@ -3,24 +3,23 @@
     <h5>Neuen Kurs anlegen</h5>
   </div>
   <div class="body">
-    <form>
+    <form [formGroup]="addCourseForm">
       <div class="row mb-2">
         <div class="col">
-          <!--Id-->
-          <label class="form-label">Id</label>
-          <input type="number" [(ngModel)]="course.id" name="Id" class="form-control"/>
-        </div>
-        <div class="col">
-          <!--Roomnumber-->
+          <!--Instruktor-->
           <label class="form-label">Kursleiter</label>
-          <input type="text" [(ngModel)]="course.instructor" name="Roomnumber" class="form-control"/>
+          <input formControlName="instructor" type="text" class="form-control"/>
+          <label *ngIf="addCourseForm.get('instructor')?.hasError('required') && addCourseForm.get('instructor')?.touched"
+                 class="text-danger">Dieses Feld muss ausgefüllt werden</label>
         </div>
       </div>
       <div class="row mb-2">
         <div class="col-6">
           <!--Name-->
           <label class="form-label">Kursname</label>
-          <input type="text" [(ngModel)]="course.name" name="Name" class="form-control"/>
+          <input formControlName="name" type="text" class="form-control"/>
+          <label *ngIf="addCourseForm.get('name')?.hasError('required') && addCourseForm.get('name')?.touched"
+                 class="text-danger">Dieses Feld muss ausgefüllt werden</label>
         </div>
       </div>
       <div class="row mb-2">
@@ -28,37 +27,47 @@
           <!--StartDate-->
           <label class="form-label">Startdatum</label>
           <!--<input type="date" [value]="course.startdate | date: 'yyyy-MM-dd'" class="form-control"/>-->
-          <input type="date" [value]="course.startdate | date: 'yyyy-MM-dd'" (input)="dateChanged($event, true)" class="form-control"/>
+          <input formControlName="startdate" type="date"  class="form-control"/>
+          <label *ngIf="addCourseForm.get('startdate')?.hasError('required') && addCourseForm.get('startdate')?.touched"
+                 class="text-danger">Dieses Feld muss ausgefüllt werden</label>
         </div>
         <div class="col">
           <!--EndDate-->
           <label class="form-label">Enddatum</label>
           <!--<input type="date" [value]="course.enddate | date: 'yyyy-MM-dd'"  class="form-control"/>-->
-          <input type="date" [value]="course.enddate | date: 'yyyy-MM-dd'" (input)="dateChanged($event, false)"  class="form-control"/>
+          <input formControlName="enddate" type="date"   class="form-control"/>
+          <label *ngIf="addCourseForm.get('enddate')?.hasError('enddate') && addCourseForm.get('enddate')?.touched"
+                 class="text-danger">Enddatum muss in der Zukunft liegen</label>
         </div>
         <div class="col">
           <!--StartDate-->
           <label class="form-label">Startzeit</label>
           <!--<input type="date" [value]="course.startdate | date: 'yyyy-MM-dd'" class="form-control"/>-->
-          <input type="time" class="form-control"/>
+          <input type="time" formControlName="starttime" class="form-control"/>
+          <label *ngIf="addCourseForm.get('starttime')?.hasError('required') && addCourseForm.get('starttime')?.touched"
+                 class="text-danger">Dieses Feld muss ausgefüllt werden</label>
         </div>
         <div class="col">
           <!--StartDate-->
           <label class="form-label">Endzeit</label>
           <!--<input type="date" [value]="course.startdate | date: 'yyyy-MM-dd'" class="form-control"/>-->
-          <input type="time" class="form-control"/>
+          <input type="time" formControlName="endtime" class="form-control" placeholder="[(ngModel)]"/>
+          <label *ngIf="addCourseForm.get('endtime')?.hasError('required') && addCourseForm.get('endtime')?.touched"
+                 class="text-danger">Dieses Feld muss ausgefüllt werden</label>
         </div>
         <div class="col">
           <!--StartDate-->
           <label class="form-label">Zusatzinformation</label>
           <!--<input type="date" [value]="course.startdate | date: 'yyyy-MM-dd'" class="form-control"/>-->
-          <input type="text" class="form-control"/>
+          <input formControlName="additionalinfo" type="text"  class="form-control"/>
+          <label *ngIf="addCourseForm.get('additionalinfo')?.hasError('required') && addCourseForm.get('additionalinfo')?.touched"
+                 class="text-danger">Dieses Feld muss ausgefüllt werden</label>
         </div>
       </div>
     </form>
   </div>
   <div class="footer">
-    <button (click)="save()" class="btn btn-default">Submit</button>
+    <button [disabled]="addCourseForm.invalid" (click)="save()" class="btn btn-default">Submit</button>
   </div>
 
 </div>
